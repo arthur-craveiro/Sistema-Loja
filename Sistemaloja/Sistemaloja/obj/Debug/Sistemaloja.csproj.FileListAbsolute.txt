@@ -1,0 +1,5 @@
+c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll
+c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb
+c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
+c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
+c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb

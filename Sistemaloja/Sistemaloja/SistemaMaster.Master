@@ -1,0 +1,224 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SistemaMaster.master.cs" Inherits="Sistemaloja.SistemaMaster" %>
+
+<!DOCTYPE html>
+<style>
+       
+               body {
+                      background-image:url(Imagens/p.png);
+                  }
+    
+*{
+	margin: 0;
+	padding:0;
+    font-family: 'Segoe UI Light', Arial, Helvetica;
+}
+#topo{
+font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+
+     font-family: Impact;
+
+	 width: 100%;
+	 height: 50px;
+     color:white;
+	 top:0;
+	 left: 0;
+
+	 background-color: #006a87;
+
+	
+
+	 border-bottom: solid 0px #fff;
+	 margin-bottom: 200px;
+	 position: fixed;
+     box-shadow: 2px 2px 2px 5px rgba(0,0,0,.2);
+}
+#lateral{
+ width: auto;
+ height: 50px;
+ margin-top:13px;
+ margin-left: 80px;
+ font-size: 18px;
+ font-family: nexa,light;
+
+}
+.menu-icon{ 
+     
+	position: fixed;
+	font-size:25px;
+	font-weight: bold;
+	padding: 5px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+    
+	background-color: #006a87;
+
+
+	color: #fff;
+	cursor:pointer;
+    left: 0;
+    top: 0;
+}
+.menu-icon:hover{
+	
+
+	color:#1bbe7d;
+
+
+}
+#chk{
+	display:none;
+}
+.menu{
+    top:0;
+       filter: opacity(93%);
+        box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
+	height: 100%;
+	position: fixed;
+
+	background-color: #0e8efb;
+
+	background-color: #08aeed ;
+
+	overflow: hidden;
+	transition: all  .2s;
+}
+#principal{
+
+	width: 300px;
+	left: -300px;
+
+}
+ul{
+	list-style: none;
+}
+ul li a{
+   display: block;
+   font-size: 18px;
+   font-family: Nexa;
+   padding: 10px;
+   border-bottom: solid 1px white;
+   color:#ccc;
+   text-decoration: none;
+   transition: all .2s;
+
+}
+ul li span{
+	float: right;
+	padding-right: 10px;
+}
+ul li a:hover{
+
+	background-color: #006a87;
+
+
+
+
+}
+.voltar{
+	margin-top: 60px;
+	background-color: #111;
+	border-left: solid 5px white;
+}
+.bg{
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+	background-color: rgb(0,0,0,.6);
+	display: none;
+}
+#chk:checked ~ .bg{
+	
+
+}
+#chk:checked ~ #principal{
+	transform: translateX(300px);
+
+}
+#submenu,
+#contato{
+	width: 250px;
+	left: -250px;
+}
+#submenu:target,
+#contato:target{
+transform: translateX(250px);
+ filter: opacity(100%);
+box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
+}
+#conteudo{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: auto;
+  height: 100%;
+}
+#footer {
+	 width: 100%;
+	 height: 60px;
+	 border-top: 2px solid  #cf8e30;
+	 bottom: 0;
+     left: 0;
+	 background-color: #222; 
+     
+}
+#footer_letras{
+	 width: auto;
+	 height: auto;
+	 background-color:#585454;
+	 font-size: 18px; 
+     font-family: nexa,light;
+     margin-top: 16PX;
+}
+    </style>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <div id="topo">
+            
+<div id="lateral">
+	<a href="/Index/Index.aspx" style=" color:white;text-decoration: none; top:30px; font-family:'Arial';">Sistema Loja</a>
+        </div>
+   <input type="checkbox" id="chk">
+<label for="chk" class="menu-icon">&#9776;</label>
+
+<div class="bg" ></div>
+<nav class="menu" id="principal" style="font-family:Consolas;">
+<ul>
+    
+	<li><a href="javascript:window.history.go(-1)" style="color:white;">Voltar</a></li>
+    <li><a style="color:white; text-decoration: none; font-family:Arial;"><label for="chk" >Fechar</label></a></li>
+	<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="" ForeColor="White">1</asp:HyperLink></li>
+    <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="" ForeColor="White">2</asp:HyperLink></li>
+	<li>
+        <asp:HyperLink ID="HyperLink4" runat="server" ForeColor="white" NavigateUrl="">3</asp:HyperLink></li>
+    <li ><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="" Font-Names="Arial" ForeColor="White">4</asp:HyperLink></li>
+	<li><a href="#submenu" style="color:white;">5<span>+</span></a></li>
+	<li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="" Font-Names="Arial" ForeColor="White">6</asp:HyperLink></li>
+
+	</ul>
+</nav>
+<nav class="menu" id="submenu">
+	<ul>
+	<li><a href="/TelaInicial.aspx">voltar</a></li>
+	<li><asp:HyperLink ID="HyperLink6" runat="server" ForeColor="white" NavigateUrl="">Todos</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink7" runat="server" ForeColor="white" NavigateUrl="">1</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink8" runat="server" ForeColor="white" NavigateUrl="">2</asp:HyperLink></li>
+        <li><asp:HyperLink ID="HyperLink10" runat="server" ForeColor="white" NavigateUrl="">3</asp:HyperLink></li>
+	</ul>
+</nav>
+
+    <div style="margin-top:0;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
