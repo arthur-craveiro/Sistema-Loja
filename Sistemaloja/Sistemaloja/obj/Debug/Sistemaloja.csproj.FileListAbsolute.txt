@@ -3,3 +3,8 @@ c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Siste
 c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
 c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
 c:\users\felipe santiago\documents\visual studio 2012\Projects\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
+C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll
+C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb
+C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
+C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
+C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
