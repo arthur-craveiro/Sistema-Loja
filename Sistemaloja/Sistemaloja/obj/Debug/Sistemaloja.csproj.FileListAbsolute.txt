@@ -8,3 +8,15 @@ C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb
 C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
 C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
 C:\IFRN - 2018\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll.config
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojAssemblyReference.cache
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csproj.CoreCompileInputs.cache
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
+C:\Users\Otávio\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
+C:\IFRN - 2018\Sistema-Loja-master\Sistema-Loja-master\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll
+C:\IFRN - 2018\Sistema-Loja-master\Sistema-Loja-master\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb
+C:\IFRN - 2018\Sistema-Loja-master\Sistema-Loja-master\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
+C:\IFRN - 2018\Sistema-Loja-master\Sistema-Loja-master\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
+C:\IFRN - 2018\Sistema-Loja-master\Sistema-Loja-master\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
