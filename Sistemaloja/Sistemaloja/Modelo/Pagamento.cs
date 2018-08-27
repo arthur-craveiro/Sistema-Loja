@@ -19,7 +19,7 @@ namespace Sistemaloja.Modelo
             set { funcionario.idFuncionario = value; }
         }
 
-        /*public Pagamento(int aidPagamento, double avalorPago, DateTime adataDePagamento, int amesReferencia, int aanoReferencia, DAL.DALFuncionario,int aidFuncionario)
+        public Pagamento(int aidPagamento, double avalorPago, DateTime adataDePagamento, int amesReferencia, int aanoReferencia, int aidFuncionario)
         {
             this.idPagamento = aidPagamento;
             this.valorPago = avalorPago;
@@ -27,8 +27,8 @@ namespace Sistemaloja.Modelo
             this.mesReferencia = amesReferencia;
             this.anoReferencia = aanoReferencia;
             DAL.DALFuncionario dalfuncionario = new DAL.DALFuncionario();
-            funcionario = dalfuncionario.Select(aidFuncionario);
-        }*/
+            funcionario = dalfuncionario.Select(aidFuncionario)[0];
+        }
 
         public Pagamento(double avalorPago, DateTime adataDePagamento, int amesReferencia, int aanoReferencia, int aidFuncionario)
         {
@@ -36,7 +36,8 @@ namespace Sistemaloja.Modelo
             this.dataDePagamento = adataDePagamento;
             this.mesReferencia = amesReferencia;
             this.anoReferencia = aanoReferencia;
-            this.idFuncionario = aidFuncionario;
+            DAL.DALFuncionario dalfuncionario = new DAL.DALFuncionario();
+            funcionario = dalfuncionario.Select(aidFuncionario)[0];
         }
     }
 }

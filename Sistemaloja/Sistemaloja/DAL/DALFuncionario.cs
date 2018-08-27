@@ -21,29 +21,19 @@ namespace Sistemaloja.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.Funcionario> SelectAll()
         {
-            // Variavel para armazenar um livro
             Modelo.Funcionario aFuncionario;
-            // Cria Lista Vazia
             List<Modelo.Funcionario> aListFuncionario = new List<Modelo.Funcionario>();
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
-            // define SQL do comando
-            cmd.CommandText = "Select * from Cliente";
-            // Executa comando, gerando objeto DbDataReader
+            cmd.CommandText = "Select * from Funcionario";
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do livro do resultado e apresenta no segundo rótulo
             if (dr.HasRows)
             {
-
-                while (dr.Read()) // Le o proximo registro
+                while (dr.Read())
                 {
-                    // Cria objeto com dados lidos do banco de dados
                     aFuncionario = new Modelo.Funcionario(
-                        (int)dr["id"],
+                        (int)dr["idFuncionario"],
                         dr["nome"].ToString(),
                         dr["telefones"].ToString(),
                         dr["identidade"].ToString(),
@@ -53,22 +43,45 @@ namespace Sistemaloja.DAL
                         (bool)dr["tecnico"],
                         dr["observacao"].ToString()
                         );
-                    // Adiciona o livro lido à lista
                     aListFuncionario.Add(aFuncionario);
                 }
             }
-            // Fecha DataReader
             dr.Close();
-            // Fecha Conexão
             conn.Close();
-
             return aListFuncionario;
         }
 
-
-        internal Modelo.Funcionario Select(int aidFuncionario)
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Funcionario> Select(int aidFuncionario)
         {
-            throw new NotImplementedException();
+            Modelo.Funcionario funcionario;
+            List<Modelo.Funcionario> listFun = new List<Modelo.Funcionario>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Funcionario Where idFuncionario = @idFuncionario";
+            cmd.Parameters.AddWithValue("@idFuncionario", aidFuncionario);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read()) 
+                {
+                    funcionario = new Modelo.Funcionario(
+                        Convert.ToInt32(dr["idFuncionario"]),
+                        dr["nome"].ToString(),
+                        dr["telefones"].ToString(),
+                        dr["identidade"].ToString(),
+                        dr["carteiradetrabalho"].ToString(),
+                        (double)dr["salario"],
+                        (bool)dr["motorista"],
+                        (bool)dr["tecnico"],
+                        dr["observacao"].ToString());
+                        listFun.Add(funcionario);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return listFun; 
         }
     }
 }
