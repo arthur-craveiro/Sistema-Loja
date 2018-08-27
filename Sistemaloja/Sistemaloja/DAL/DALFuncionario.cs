@@ -38,9 +38,9 @@ namespace Sistemaloja.DAL
                         dr["telefones"].ToString(),
                         dr["identidade"].ToString(),
                         dr["carteiradetrabalho"].ToString(),
-                        (double)dr["salario"],
-                        (bool)dr["motorista"],
-                        (bool)dr["tecnico"],
+                        float.Parse(dr["salario"].ToString()),
+                        Convert.ToBoolean(dr["motorista"]),
+                        Convert.ToBoolean(dr["tecnico"]),
                         dr["observacao"].ToString()
                         );
                     aListFuncionario.Add(aFuncionario);

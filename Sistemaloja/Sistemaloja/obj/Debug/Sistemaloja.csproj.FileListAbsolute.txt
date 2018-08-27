@@ -32,3 +32,8 @@ C:\Users\Silas\Desktop\Papaiz\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemalo
 C:\Users\Silas\Desktop\Papaiz\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
 C:\Users\Silas\Desktop\Papaiz\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
 C:\Users\Silas\Desktop\Papaiz\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
+C:\Users\Silas\Desktop\PapaizCerto\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.csprojResolveAssemblyReference.cache
+C:\Users\Silas\Desktop\PapaizCerto\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.dll
+C:\Users\Silas\Desktop\PapaizCerto\Sistema-Loja\Sistemaloja\Sistemaloja\obj\Debug\Sistemaloja.pdb
+C:\Users\Silas\Desktop\PapaizCerto\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.dll
+C:\Users\Silas\Desktop\PapaizCerto\Sistema-Loja\Sistemaloja\Sistemaloja\bin\Sistemaloja.pdb

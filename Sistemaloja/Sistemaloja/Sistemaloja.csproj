@@ -59,6 +59,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Funcionario.aspx" />
     <Content Include="Imagens\background.png" />
     <Content Include="Imagens\p.png" />
     <Content Include="Imagens\s.png" />
@@ -74,6 +75,13 @@
     <Compile Include="DAL\DALFuncionario.cs" />
     <Compile Include="DAL\DALPagamento.cs" />
     <Compile Include="DAL\DALUF.cs" />
+    <Compile Include="Funcionario.aspx.cs">
+      <DependentUpon>Funcionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Funcionario.aspx.designer.cs">
+      <DependentUpon>Funcionario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
