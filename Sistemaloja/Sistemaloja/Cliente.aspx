@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<<<<<<< HEAD
     <asp:Table ID="Table1" runat="server">
       <asp:TableRow>
           <asp:TableCell>idCliente</asp:TableCell>
@@ -14,4 +15,7 @@
           <asp:TableCell>Sigla</asp:TableCell>
       </asp:TableRow>
     </asp:Table>
+=======
+    <asp:Table ID="Table1" runat="server"></asp:Table>
+>>>>>>> 20edb057dc6710fa2cca43b5ef2df4930191248c
 </asp:Content>
