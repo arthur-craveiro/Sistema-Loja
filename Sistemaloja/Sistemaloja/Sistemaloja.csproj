@@ -68,8 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALCliente.cs" />
+    <Compile Include="DAL\DALFuncionario.cs" />
+    <Compile Include="DAL\DALPagamento.cs" />
     <Compile Include="DAL\DALUF.cs" />
     <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Funcionario.cs" />
+    <Compile Include="Modelo\Pagamento.cs" />
     <Compile Include="Modelo\UF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SistemaMaster.Master.cs">
