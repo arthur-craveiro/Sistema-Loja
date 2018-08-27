@@ -19,8 +19,7 @@ namespace Sistemaloja
             Label11.Text = clientes[0].endereco;
             Label12.Text = clientes[0].CPF;
             Label13.Text = clientes[0].CNPJ;
-            Label14.Text = clientes[0].estado.ToString();
-
+            Label14.Text = clientes[0].uf.sigla;
         }
 
         protected void Button1_Click(object sender, EventArgs e)

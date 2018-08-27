@@ -67,6 +67,7 @@
     <Content Include="Cliente.aspx" />
     <Content Include="ExcluirCliente.aspx" />
     <Content Include="AlterarCliente.aspx" />
+    <Content Include="InserirCliente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALCliente.cs" />
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="AlterarCliente.aspx.designer.cs">
       <DependentUpon>AlterarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserirCliente.aspx.cs">
+      <DependentUpon>InserirCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirCliente.aspx.designer.cs">
+      <DependentUpon>InserirCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
