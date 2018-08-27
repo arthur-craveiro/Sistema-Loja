@@ -14,9 +14,9 @@ namespace Sistemaloja.Modelo
         public string endereco { get; set; }
         public string CPF { get; set; }
         public string CNPJ { get; set; }
-        public int idUF { get; set; }
+        public string estado { get; set; }
 
-        public Cliente(int aidCliente, string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aidUF ) {
+        public Cliente(int aidCliente, string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, string aestado ) {
             this.idCliente = aidCliente;
             this.nome = anome;
             this.telefones = atelefones;
@@ -24,10 +24,10 @@ namespace Sistemaloja.Modelo
             this.endereco = aendereco;
             this.CPF = aCPF;
             this.CNPJ = aCNPJ;
-            this.idUF = aidUF;
+            this.estado = aestado;
         }
 
-        public Cliente(string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aidUF)
+        public Cliente(string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, string aestado)
         {
             this.nome = anome;
             this.telefones = atelefones;
@@ -35,7 +35,7 @@ namespace Sistemaloja.Modelo
             this.endereco = aendereco;
             this.CPF = aCPF;
             this.CNPJ = aCNPJ;
-            this.idUF = aidUF;
+            this.estado = aestado;
         }
     }
 }
