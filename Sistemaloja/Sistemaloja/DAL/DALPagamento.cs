@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -54,15 +54,16 @@ namespace Sistemaloja.DAL
                     // Adiciona o livro lido à lista
                     aListPagamento.Add(aPagamento);
                 }
+                }
+                // Fecha DataReader
+                dr.Close();
+                // Fecha Conexão
+                conn.Close();
+
+                return aListPagamento;
             }
-            // Fecha DataReader
-            dr.Close();
-            // Fecha Conexão
-            conn.Close();
 
-            return aListPagamento;
+
         }
-
-
     }
-}
+}*/

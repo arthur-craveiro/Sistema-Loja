@@ -12,12 +12,13 @@ namespace Sistemaloja.Modelo
         public string telefones { get; set; }
         public string identidade { get; set; }
         public string carteiradetrabalho { get; set; }
-        public double salario {get; set;}
-        public bool motorista {get; set;}
-        public bool tecnico {get; set;}
+        public double salario { get; set; }
+        public bool motorista { get; set; }
+        public bool tecnico { get; set; }
         public string observacao { get; set; }
 
-        public Funcionario(int aidFuncionario, string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario, bool amotorista, bool atecnico, string aobservacao ) {
+        public Funcionario(int aidFuncionario, string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario, bool amotorista, bool atecnico, string aobservacao)
+        {
             this.idFuncionario = aidFuncionario;
             this.nome = anome;
             this.telefones = atelefones;
@@ -29,7 +30,8 @@ namespace Sistemaloja.Modelo
             this.observacao = aobservacao;
         }
 
-        public Funcionario(string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario, bool amotorista, bool atecnico, string aobservacao ) {
+        public Funcionario(string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario, bool amotorista, bool atecnico, string aobservacao)
+        {
             this.nome = anome;
             this.telefones = atelefones;
             this.identidade = aidentidade;
@@ -39,4 +41,5 @@ namespace Sistemaloja.Modelo
             this.tecnico = atecnico;
             this.observacao = aobservacao;
         }
+    }
 }
