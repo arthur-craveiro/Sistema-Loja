@@ -39,7 +39,18 @@ namespace Sistemaloja
                 cell2 = new TableCell();
                 cell2.Text = cliente.estado.ToString();
                 row.Cells.Add(cell2);
-
+                cell2 = new TableCell();
+                HyperLink hl = new HyperLink();
+                hl.NavigateUrl = "./AlterarCliente.aspx?idCliente=" + cliente.idCliente.ToString();
+                hl.Text = "Editar";
+                cell2.Controls.Add(hl);
+                row.Cells.Add(cell2);
+                cell2 = new TableCell();
+                hl = new HyperLink();
+                hl.NavigateUrl = "./ExcluirCliente.aspx?idCliente=" + cliente.idCliente.ToString();
+                hl.Text = "Excluir";
+                cell2.Controls.Add(hl);
+                row.Cells.Add(cell2);
                 Table1.Rows.Add(row);
             }
         }

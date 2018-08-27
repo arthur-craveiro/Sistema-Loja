@@ -65,6 +65,8 @@
     <Content Include="TelaInicial.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
+    <Content Include="ExcluirCliente.aspx" />
+    <Content Include="AlterarCliente.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\DALCliente.cs" />
@@ -96,6 +98,20 @@
     </Compile>
     <Compile Include="Cliente.aspx.designer.cs">
       <DependentUpon>Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirCliente.aspx.cs">
+      <DependentUpon>ExcluirCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirCliente.aspx.designer.cs">
+      <DependentUpon>ExcluirCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarCliente.aspx.cs">
+      <DependentUpon>AlterarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarCliente.aspx.designer.cs">
+      <DependentUpon>AlterarCliente.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
