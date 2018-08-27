@@ -1,17 +1,18 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SistemaMaster.master.cs" Inherits="Sistemaloja.SistemaMaster" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SistemaMaster.master.cs" Inherits="Sistemaloja.SistemaMaster" %>
 
 <!DOCTYPE html>
 <style>
        
-               body {
-                      background-image:url(Imagens/p.png);
-                  }
+body {
+    background-image:url(Imagens/p.png);
+}
     
 *{
 	margin: 0;
 	padding:0;
     font-family: 'Segoe UI Light', Arial, Helvetica;
 }
+
 #topo{
 font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -32,6 +33,7 @@ font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	 position: fixed;
      box-shadow: 2px 2px 2px 5px rgba(0,0,0,.2);
 }
+
 #lateral{
  width: auto;
  height: 50px;
@@ -41,6 +43,7 @@ font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
  font-family: nexa,light;
 
 }
+
 .menu-icon{ 
      
 	position: fixed;
@@ -59,16 +62,15 @@ font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
     left: 0;
     top: 0;
 }
+
 .menu-icon:hover{
-	
-
 	color:#1bbe7d;
-
-
 }
+
 #chk{
 	display:none;
 }
+
 .menu{
     top:0;
        filter: opacity(93%);
@@ -83,15 +85,18 @@ font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	overflow: hidden;
 	transition: all  .2s;
 }
+
 #principal{
 
 	width: 300px;
 	left: -300px;
 
 }
+
 ul{
 	list-style: none;
 }
+
 ul li a{
    display: block;
    font-size: 18px;
@@ -103,10 +108,12 @@ ul li a{
    transition: all .2s;
 
 }
+
 ul li span{
 	float: right;
 	padding-right: 10px;
 }
+
 ul li a:hover{
 
 	background-color: #006a87;
@@ -115,11 +122,13 @@ ul li a:hover{
 
 
 }
+
 .voltar{
 	margin-top: 60px;
 	background-color: #111;
 	border-left: solid 5px white;
 }
+
 .bg{
 	width: 100%;
 	height: 100%;
@@ -129,31 +138,41 @@ ul li a:hover{
 	background-color: rgb(0,0,0,.6);
 	display: none;
 }
+
 #chk:checked ~ .bg{
 	
 
 }
+
 #chk:checked ~ #principal{
 	transform: translateX(300px);
 
 }
+
+#relatorios,
+#cadastros,
 #submenu,
 #contato{
 	width: 250px;
 	left: -250px;
 }
+
+#relatorios:target,
+#cadastros:target,
 #submenu:target,
 #contato:target{
 transform: translateX(250px);
  filter: opacity(100%);
 box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 }
+
 #conteudo{
   margin-top: 50px;
   margin-bottom: 50px;
   width: auto;
   height: 100%;
 }
+
 #footer {
 	 width: 100%;
 	 height: 60px;
@@ -163,6 +182,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 	 background-color: #222; 
      
 }
+
 #footer_letras{
 	 width: auto;
 	 height: auto;
@@ -171,6 +191,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
      font-family: nexa,light;
      margin-top: 16PX;
 }
+
     </style>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -193,25 +214,31 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 <ul>
     
 	<li><a href="javascript:window.history.go(-1)" style="color:white;">Voltar</a></li>
-    <li><a style="color:white; text-decoration: none; font-family:Arial;"><label for="chk" >Fechar</label></a></li>
-	<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="" ForeColor="White">1</asp:HyperLink></li>
-    <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="" ForeColor="White">2</asp:HyperLink></li>
-	<li>
-        <asp:HyperLink ID="HyperLink4" runat="server" ForeColor="white" NavigateUrl="">3</asp:HyperLink></li>
-    <li ><asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="" Font-Names="Arial" ForeColor="White">4</asp:HyperLink></li>
-	<li><a href="#submenu" style="color:white;">5<span>+</span></a></li>
-	<li><asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="" Font-Names="Arial" ForeColor="White">6</asp:HyperLink></li>
+    <li><a style="color:white; text-decoration: none;"><label for="chk" >Fechar</label></a></li>    
+    <li><a href="#cadastros" style="color:white;">Cadastros<span> >> </span></a></li>
+    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="" ForeColor="White">Pagamentos</asp:HyperLink></li>
+	<li><a href="#relatorios" style="color:white;">Relatórios<span> >> </span></a></li>
 
-	</ul>
+</ul>
 </nav>
-<nav class="menu" id="submenu">
+<nav class="menu" id="cadastros">
 	<ul>
-	<li><a href="/TelaInicial.aspx">voltar</a></li>
-	<li><asp:HyperLink ID="HyperLink6" runat="server" ForeColor="white" NavigateUrl="">Todos</asp:HyperLink></li>
-	<li><asp:HyperLink ID="HyperLink7" runat="server" ForeColor="white" NavigateUrl="">1</asp:HyperLink></li>
-	<li><asp:HyperLink ID="HyperLink8" runat="server" ForeColor="white" NavigateUrl="">2</asp:HyperLink></li>
-        <li><asp:HyperLink ID="HyperLink10" runat="server" ForeColor="white" NavigateUrl="">3</asp:HyperLink></li>
-	</ul>
+	<li><a href="/TelaInicial.aspx">Voltar</a></li>
+	<li><asp:HyperLink ID="HyperLink2" runat="server" ForeColor="white" NavigateUrl="">Compras</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink3" runat="server" ForeColor="white" NavigateUrl="">Clientes</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink4" runat="server" ForeColor="white" NavigateUrl="">Fornecedores</asp:HyperLink></li>
+    <li><asp:HyperLink ID="HyperLink5" runat="server" ForeColor="white" NavigateUrl="">Funcionários</asp:HyperLink></li>
+    <li><asp:HyperLink ID="HyperLink6" runat="server" ForeColor="white" NavigateUrl="">Produtos</asp:HyperLink></li>	
+    <li><asp:HyperLink ID="HyperLink7" runat="server" ForeColor="white" NavigateUrl="">Vendas</asp:HyperLink></li>    
+    </ul>
+</nav>
+
+<nav class="menu" id="relatorios">
+	<ul>
+	<li><a href="/TelaInicial.aspx">Voltar</a></li>
+	<li><asp:HyperLink ID="HyperLink8" runat="server" ForeColor="white" NavigateUrl="">Compras</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink9" runat="server" ForeColor="white" NavigateUrl="">Vendas</asp:HyperLink></li>  
+    </ul>
 </nav>
 
     <div style="margin-top:0;">
