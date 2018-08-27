@@ -32,7 +32,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "select idCliente,nome,telefones,cidade,endereco, CPF, CNPJ, sigla from Cliente join UF on Cliente.idestado = UF.id";
+            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado from Cliente";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -50,7 +50,7 @@ namespace Sistemaloja.DAL
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        dr["sigla"].ToString()
+                        (int)dr["idestado"]
                         );
                     // Adiciona o livro lido à lista
                     aListCliente.Add(aCliente);
@@ -78,7 +78,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "select idCliente,nome,telefones,cidade,endereco, CPF, CNPJ, sigla from Cliente join UF on Cliente.idestado = UF.id where idCliente = @id";
+            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado from Cliente";
             cmd.Parameters.AddWithValue("@id", id);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -97,7 +97,7 @@ namespace Sistemaloja.DAL
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        dr["sigla"].ToString()
+                        (int)dr["idestado"]
                         );
                     // Adiciona o livro lido à lista
                     aListCliente.Add(aCliente);

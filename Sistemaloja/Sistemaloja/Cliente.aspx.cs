@@ -37,7 +37,7 @@ namespace Sistemaloja
                 cell2.Text = cliente.CNPJ.ToString();
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
-                cell2.Text = cliente.estado.ToString();
+                cell2.Text = cliente.uf.sigla.ToString();
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 HyperLink hl = new HyperLink();

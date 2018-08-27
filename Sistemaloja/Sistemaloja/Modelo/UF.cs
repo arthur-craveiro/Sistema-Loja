@@ -7,13 +7,13 @@ namespace Sistemaloja.Modelo
 {
     public class UF
     {
+        public int id { get; set; }
         public string sigla { get; set; }
-
         public UF() {
             this.sigla = "";
         }
-
-        public UF(string aSigla) {
+        public UF(int aId, string aSigla) {
+            this.id = aId;
             this.sigla = aSigla;
         }
     }

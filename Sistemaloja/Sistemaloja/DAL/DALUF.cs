@@ -21,42 +21,54 @@ namespace Sistemaloja.DAL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Modelo.UF> SelectAll()
         {
-            // Variavel para armazenar um livro
             Modelo.UF aUF;
-            // Cria Lista Vazia
             List<Modelo.UF> aListUF = new List<Modelo.UF>();
-            // Cria Conexão com banco de dados
             SqlConnection conn = new SqlConnection(connectionString);
-            // Abre conexão com o banco de dados
             conn.Open();
-            // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
-            // define SQL do comando
             cmd.CommandText = "Select * from UF";
-            // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
-            // Le titulo do livro do resultado e apresenta no segundo rótulo
             if (dr.HasRows)
             {
-
-                while (dr.Read()) // Le o proximo registro
+                while (dr.Read()) 
                 {
-                    // Cria objeto com dados lidos do banco de dados
                     aUF = new Modelo.UF(
+                        (int)dr["id"],
                         dr["sigla"].ToString()
                         );
-                    // Adiciona o livro lido à lista
                     aListUF.Add(aUF);
                 }
             }
-            // Fecha DataReader
             dr.Close();
-            // Fecha Conexão
             conn.Close();
-
             return aListUF;
         }
-
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.UF> Select(int aidEstado)
+        {
+            Modelo.UF uf;
+            List<Modelo.UF> listUF = new List<Modelo.UF>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from UF Where id = @id";
+            cmd.Parameters.AddWithValue("@id", aidEstado);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    uf = new Modelo.UF(
+                        (int)dr["id"],
+                        dr["sigla"].ToString()
+                        );
+                    listUF.Add(uf);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return listUF;
+        }
 
     }
 }
