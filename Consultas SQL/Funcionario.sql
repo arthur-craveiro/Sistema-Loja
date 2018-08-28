@@ -1,5 +1,5 @@
 create table Funcionario(
-	idFuncionario int primary key,
+	idFuncionario int identity(1,1) primary key,
 	nome varchar(100) not null,
 	telefones varchar(50) not null,
 	identidade varchar(45) not null,

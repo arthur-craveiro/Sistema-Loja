@@ -24,7 +24,7 @@ namespace Sistemaloja.DAL
             Modelo.Funcionario aFuncionario;
             List<Modelo.Funcionario> aListFuncionario = new List<Modelo.Funcionario>();
             SqlConnection conn = new SqlConnection(connectionString);
-            conn.Open();
+           conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Funcionario";
             SqlDataReader dr = cmd.ExecuteReader();
@@ -38,7 +38,7 @@ namespace Sistemaloja.DAL
                         dr["telefones"].ToString(),
                         dr["identidade"].ToString(),
                         dr["carteiradetrabalho"].ToString(),
-                        float.Parse(dr["salario"].ToString()),
+                        Convert.ToDouble(dr["salario"]),
                         Convert.ToBoolean(dr["motorista"]),
                         Convert.ToBoolean(dr["tecnico"]),
                         dr["observacao"].ToString()
@@ -72,9 +72,9 @@ namespace Sistemaloja.DAL
                         dr["telefones"].ToString(),
                         dr["identidade"].ToString(),
                         dr["carteiradetrabalho"].ToString(),
-                        (double)dr["salario"],
-                        (bool)dr["motorista"],
-                        (bool)dr["tecnico"],
+                         Convert.ToDouble(dr["salario"]),
+                        Convert.ToBoolean(dr["motorista"]),
+                        Convert.ToBoolean(dr["tecnico"]),
                         dr["observacao"].ToString());
                         listFun.Add(funcionario);
                 }
@@ -82,6 +82,65 @@ namespace Sistemaloja.DAL
             dr.Close();
             conn.Close();
             return listFun; 
+        }
+        public void AtualizarFuncionario(Modelo.Funcionario funcionario)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("update Funcionario set nome = @nome, telefones = @telefones, identidade = @identidade, carteiradetrabalho = @carteiradetrabalho, salario = @salario, motorista = @motorista, tecnico = @tecnico, observacao=@observacao where idFuncionario = @id", conn);
+            cmd.Parameters.AddWithValue("@id", funcionario.idFuncionario);
+            cmd.Parameters.AddWithValue("@nome", funcionario.nome);
+            cmd.Parameters.AddWithValue("@telefones", funcionario.telefones);
+            cmd.Parameters.AddWithValue("@identidade", funcionario.identidade);
+            cmd.Parameters.AddWithValue("@carteiradetrabalho", funcionario.carteiradetrabalho);
+            cmd.Parameters.AddWithValue("@salario", funcionario.salario);
+            cmd.Parameters.AddWithValue("@motorista", funcionario.motorista);
+            cmd.Parameters.AddWithValue("@tecnico", funcionario.tecnico);
+            cmd.Parameters.AddWithValue("@observacao", funcionario.observacao);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(int id)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("DELETE FROM Funcionario WHERE idFuncionario = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
+        public void InserirFuncionario(Modelo.Funcionario funcionario)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("insert into Funcionario(nome,telefones,identidade,carteiradetrabalho,salario,motorista,tecnico,observacao) values (@nome,@telefones,@identidade,@carteiradetrabalho,@salario,@motorista,@tecnico,@observacao)", conn);
+            cmd.Parameters.AddWithValue("@nome", funcionario.nome);
+            cmd.Parameters.AddWithValue("@telefones", funcionario.telefones);
+            cmd.Parameters.AddWithValue("@identidade", funcionario.identidade);
+            cmd.Parameters.AddWithValue("@carteiradetrabalho", funcionario.carteiradetrabalho);
+            cmd.Parameters.AddWithValue("@salario", funcionario.salario);
+            cmd.Parameters.AddWithValue("@motorista", funcionario.motorista);
+            cmd.Parameters.AddWithValue("@tecnico", funcionario.tecnico);
+            cmd.Parameters.AddWithValue("@observacao", funcionario.observacao);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
         }
     }
 }

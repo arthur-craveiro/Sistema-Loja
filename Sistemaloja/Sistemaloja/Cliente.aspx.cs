@@ -18,6 +18,7 @@ namespace Sistemaloja
                 TableCell cell2 = new TableCell();
                 cell2.Text = cliente.idCliente.ToString();
                 row.Cells.Add(cell2);
+                cell2.Visible = false;
                 cell2 = new TableCell();
                 cell2.Text = cliente.nome.ToString();
                 row.Cells.Add(cell2);
@@ -41,12 +42,14 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 HyperLink hl = new HyperLink();
+                hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./AlterarCliente.aspx?idCliente=" + cliente.idCliente.ToString();
                 hl.Text = "Editar";
                 cell2.Controls.Add(hl);
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 hl = new HyperLink();
+                hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./ExcluirCliente.aspx?idCliente=" + cliente.idCliente.ToString();
                 hl.Text = "Excluir";
                 cell2.Controls.Add(hl);

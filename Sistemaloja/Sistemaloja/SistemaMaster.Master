@@ -191,6 +191,141 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
      font-family: nexa,light;
      margin-top: 16PX;
 }
+.Botao {
+					 	width: 15em;
+					    background-color: #ffff; 
+					    border: 1px; 
+						border-radius: 8px;
+					    color: white;
+					    padding: 16px 32px;
+					    text-align: center;
+					    text-decoration: none;
+					    display: inline-block;
+					    font-size: 19px;
+					    margin: 4px 2px;
+					    -webkit-transition-duration: 0.4s; 
+					    transition-duration: 0.4s;
+					    cursor: pointer;
+
+						}
+        	.botao1 {
+					    background-color: white;
+					    color: black;
+					    border: 2px solid #555552;
+					}
+        .botao1:hover {
+					    background-color:  green;
+					    color: white;
+					    border-color: white;
+					}
+        .Botao4 {
+					 	width: 10em;
+					    background-color: #ffff; 
+					    border: 1px; 
+						border-radius: 8px;
+					    color: white;
+					    padding: 10px 10px;
+					    text-align: center;
+					    text-decoration: none;
+					    display: inline-block;
+					    font-size: 19px;
+					    margin: 4px 2px;
+					    -webkit-transition-duration: 0.4s; 
+					    transition-duration: 0.4s;
+					    cursor: pointer;
+
+						}
+        	.botao4 {
+					    background-color: white;
+					    color: black;
+					    border: 2px solid #555552;
+					}
+        .botao4:hover {
+					    background-color:  red;
+					    color: white;
+					    border-color: white;
+					}
+        .Botao5 {
+					 	width: 10em;
+					    background-color: #ffff; 
+					    border: 1px; 
+						border-radius: 8px;
+					    color: white;
+					    padding: 10px 10px;
+					    text-align: center;
+					    text-decoration: none;
+					    display: inline-block;
+					    font-size: 19px;
+					    margin: 4px 2px;
+					    -webkit-transition-duration: 0.4s; 
+					    transition-duration: 0.4s;
+					    cursor: pointer;
+
+						}
+        	.botao5 {
+					    background-color: white;
+					    color: black;
+					    border: 2px solid #555552;
+					}
+        .botao5:hover {
+					    background-color:  green;
+					    color: white;
+					    border-color: white;
+					}
+        .Botao2 {
+					 	width: 9em;
+					    background-color: #ffff; 
+					    border: 1px; 
+						border-radius: 8px;
+					    color: white;
+					    padding: 10px 10px;
+					    text-align: center;
+					    text-decoration: none;
+					    display: inline-block;
+					    font-size: 15px;
+					    margin: 4px 2px;
+					    -webkit-transition-duration: 0.4s; 
+					    transition-duration: 0.4s;
+					    cursor: pointer;
+
+						}
+        	.botao2 {
+					    background-color: white;
+					    color: black;
+					    border: 2px solid #555552;
+					}
+        .botao2:hover {
+					    background-color:  green;
+					    color: white;
+					    border-color: white;
+					}
+        .Botao3 {
+					 	width: 3em;
+					    background-color: #ffff; 
+					    border: 1px; 
+						border-radius:12px;
+					    color: white;
+					    padding: 10px 10px;
+					    text-align: center;
+					    text-decoration: none;
+					    display: inline-block;
+					    font-size: 12px;
+					    margin: 4px 2px;
+					    -webkit-transition-duration: 0.4s; 
+					    transition-duration: 0.4s;
+					    cursor: pointer;
+
+						}
+        	.botao3 {
+					    background-color: white;
+					    color: black;
+					    border: 2px solid #555552;
+					}
+        .botao3:hover {
+					    background-color:  green;
+					    color: white;
+					    border-color: white;
+					}
 
     </style>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -204,7 +339,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
          <div id="topo">
             
 <div id="lateral">
-	<a href="/Index/Index.aspx" style=" color:white;text-decoration: none; top:30px; font-family:'Arial';">Sistema Loja</a>
+	<a href="/TelaInicial.aspx" style=" color:white;text-decoration: none; top:30px; font-family:'Arial';">Sistema Loja</a>
         </div>
    <input type="checkbox" id="chk">
 <label for="chk" class="menu-icon">&#9776;</label>
@@ -213,7 +348,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 <nav class="menu" id="principal" style="font-family:Consolas;">
 <ul>
     
-	<li><a href="javascript:window.history.go(-1)" style="color:white;">Voltar</a></li>
+	
     <li><a style="color:white; text-decoration: none;"><label for="chk" >Fechar</label></a></li>    
     <li><a href="#cadastros" style="color:white;">Cadastros<span> >> </span></a></li>
     <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="" ForeColor="White">Pagamentos</asp:HyperLink></li>
@@ -223,11 +358,11 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 </nav>
 <nav class="menu" id="cadastros">
 	<ul>
-	<li><a href="/TelaInicial.aspx">Voltar</a></li>
+	<li><a href="javascript:window.history.go(-1)">Voltar</a></li>
 	<li><asp:HyperLink ID="HyperLink2" runat="server" ForeColor="white" NavigateUrl="">Compras</asp:HyperLink></li>
-	<li><asp:HyperLink ID="HyperLink3" runat="server" ForeColor="white" NavigateUrl="">Clientes</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Cliente.aspx" ForeColor="White">Clientes</asp:HyperLink></li>
 	<li><asp:HyperLink ID="HyperLink4" runat="server" ForeColor="white" NavigateUrl="">Fornecedores</asp:HyperLink></li>
-    <li><asp:HyperLink ID="HyperLink5" runat="server" ForeColor="white" NavigateUrl="">Funcionários</asp:HyperLink></li>
+    <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Funcionario.aspx" ForeColor="White">Funcionários</asp:HyperLink></li>
     <li><asp:HyperLink ID="HyperLink6" runat="server" ForeColor="white" NavigateUrl="">Produtos</asp:HyperLink></li>	
     <li><asp:HyperLink ID="HyperLink7" runat="server" ForeColor="white" NavigateUrl="">Vendas</asp:HyperLink></li>    
     </ul>
@@ -235,7 +370,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 
 <nav class="menu" id="relatorios">
 	<ul>
-	<li><a href="/TelaInicial.aspx">Voltar</a></li>
+	<li><a href="javascript:window.history.go(-1)">Voltar</a></li>
 	<li><asp:HyperLink ID="HyperLink8" runat="server" ForeColor="white" NavigateUrl="">Compras</asp:HyperLink></li>
 	<li><asp:HyperLink ID="HyperLink9" runat="server" ForeColor="white" NavigateUrl="">Vendas</asp:HyperLink></li>  
     </ul>

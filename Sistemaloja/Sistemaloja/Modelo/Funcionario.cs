@@ -30,7 +30,7 @@ namespace Sistemaloja.Modelo
             this.observacao = aobservacao;
         }
 
-        public Funcionario(string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario, bool amotorista, bool atecnico, string aobservacao)
+        public Funcionario(string anome, string atelefones, string aidentidade, string acarteiradetrabalho, double asalario,bool amotorista, bool atecnico, string aobservacao)
         {
             this.nome = anome;
             this.telefones = atelefones;

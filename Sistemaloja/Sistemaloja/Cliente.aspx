@@ -2,11 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/InserirCliente.aspx">Inserir Cliente</asp:HyperLink>
+    <div style="margin-left:1em;">
+    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="Botao2 botao2" NavigateUrl="~/InserirCliente.aspx">Inserir Cliente</asp:HyperLink>
     <br />
-    <asp:Table ID="Table1" runat="server">
+    <asp:Table ID="Table1" runat="server" BackColor="#F3F3F3" Font-Bold="True" Font-Names="Segoe UI" Font-Size="18px" ForeColor="Black" GridLines="horizontal" Width="1200px">
       <asp:TableRow>
-          <asp:TableCell>idCliente</asp:TableCell>
+          <asp:TableCell Visible="False">idCliente</asp:TableCell>
           <asp:TableCell>Nome</asp:TableCell>
           <asp:TableCell>Telefones</asp:TableCell>
           <asp:TableCell>Cidade</asp:TableCell>
@@ -16,4 +17,5 @@
           <asp:TableCell>Sigla</asp:TableCell>
       </asp:TableRow>
     </asp:Table>
+        </div>
 </asp:Content>

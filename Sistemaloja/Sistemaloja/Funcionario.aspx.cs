@@ -16,12 +16,16 @@ namespace Sistemaloja
             foreach (Modelo.Funcionario funcionario in funcionarios)
             {
                 TableRow row = new TableRow();
+                
                 TableCell cell2 = new TableCell();
                 cell2.Text = funcionario.idFuncionario.ToString();
                 row.Cells.Add(cell2);
+                cell2.Visible = false;
                 cell2 = new TableCell();
                 cell2.Text = funcionario.nome.ToString();
+              
                 row.Cells.Add(cell2);
+                
                 cell2 = new TableCell();
                 cell2.Text = funcionario.telefones.ToString();
                 row.Cells.Add(cell2);
@@ -63,12 +67,14 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 HyperLink hl = new HyperLink();
+                hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./AlterarFuncionario.aspx?idFuncionario=" + funcionario.idFuncionario.ToString();
                 hl.Text = "Editar";
                 cell2.Controls.Add(hl);
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 hl = new HyperLink();
+                hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./ExcluirFuncionario.aspx?idFuncionario=" + funcionario.idFuncionario.ToString();
                 hl.Text = "Excluir";
                 cell2.Controls.Add(hl);

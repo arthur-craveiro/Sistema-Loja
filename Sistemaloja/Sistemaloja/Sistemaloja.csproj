@@ -59,10 +59,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlterarFuncionario.aspx" />
+    <Content Include="ExcluirFuncionario.aspx" />
     <Content Include="Funcionario.aspx" />
     <Content Include="Imagens\background.png" />
     <Content Include="Imagens\p.png" />
     <Content Include="Imagens\s.png" />
+    <Content Include="InserirFuncionario.aspx" />
     <Content Include="TelaInicial.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
@@ -71,16 +74,37 @@
     <Content Include="InserirCliente.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarFuncionario.aspx.cs">
+      <DependentUpon>AlterarFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarFuncionario.aspx.designer.cs">
+      <DependentUpon>AlterarFuncionario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALCliente.cs" />
     <Compile Include="DAL\DALFuncionario.cs" />
     <Compile Include="DAL\DALPagamento.cs" />
     <Compile Include="DAL\DALUF.cs" />
+    <Compile Include="ExcluirFuncionario.aspx.cs">
+      <DependentUpon>ExcluirFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirFuncionario.aspx.designer.cs">
+      <DependentUpon>ExcluirFuncionario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Funcionario.aspx.cs">
       <DependentUpon>Funcionario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Funcionario.aspx.designer.cs">
       <DependentUpon>Funcionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserirFuncionario.aspx.cs">
+      <DependentUpon>InserirFuncionario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirFuncionario.aspx.designer.cs">
+      <DependentUpon>InserirFuncionario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Funcionario.cs" />

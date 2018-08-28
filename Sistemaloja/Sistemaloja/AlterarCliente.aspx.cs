@@ -45,5 +45,9 @@ namespace Sistemaloja
             AtualizarCliente.AtualizarCliente(clientes[0]);
             Response.Redirect("./Cliente.aspx");
         }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("./Cliente.aspx");
+        }
     }
 }
