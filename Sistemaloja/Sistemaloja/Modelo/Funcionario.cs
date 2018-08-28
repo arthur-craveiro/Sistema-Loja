@@ -24,7 +24,7 @@ namespace Sistemaloja.Modelo
             this.telefones = atelefones;
             this.identidade = aidentidade;
             this.carteiradetrabalho = acarteiradetrabalho;
-            this.salario = salario;
+            this.salario = asalario;
             this.motorista = amotorista;
             this.tecnico = atecnico;
             this.observacao = aobservacao;
@@ -36,7 +36,7 @@ namespace Sistemaloja.Modelo
             this.telefones = atelefones;
             this.identidade = aidentidade;
             this.carteiradetrabalho = acarteiradetrabalho;
-            this.salario = salario;
+            this.salario = asalario;
             this.motorista = amotorista;
             this.tecnico = atecnico;
             this.observacao = aobservacao;

@@ -36,7 +36,7 @@ namespace Sistemaloja
                 cell2.Text = funcionario.carteiradetrabalho.ToString();
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
-                cell2.Text = funcionario.salario.ToString();
+                cell2.Text = funcionario.salario.ToString("0.00");
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 CheckBox cb = new CheckBox();

@@ -31,7 +31,7 @@
      <tr>
          <td><asp:Label ID="Label7" runat="server" Text="UF:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td>
          <td><asp:DropDownList ID="DropDownList1" runat="server" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:DropDownList> </td></tr>
-     <tr><td><asp:Button ID="Button1" runat="server" Text="Button" CssClass="Botao5 botao5"  OnClick="Button1_Click" /></td>
+     <tr><td><asp:Button ID="Button1" runat="server" Text="Enviar" CssClass="Botao5 botao5"  OnClick="Button1_Click" /></td>
      <td><asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="Botao4 botao4" OnClick="Button2_Click" /> </td></tr>
         </table>
 </asp:Content>
