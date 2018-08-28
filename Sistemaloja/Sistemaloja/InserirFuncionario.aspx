@@ -15,8 +15,8 @@
             margin-top:0;
              margin-left:60px;
              background-color:#EAEAEA;
-            opacity:0.8;
-            filter:alpha(opacity=80);
+           
+            
         }
        </style>
     <table>

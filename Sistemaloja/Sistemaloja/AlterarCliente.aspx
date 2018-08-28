@@ -9,8 +9,8 @@
         table {
              margin-left:60px;
              background-color:#EAEAEA;
-            opacity:0.8;
-            filter:alpha(opacity=80);
+            
+           
         }
          .Botao {
 					 	width: 15em;

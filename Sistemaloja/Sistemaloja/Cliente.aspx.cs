@@ -49,7 +49,7 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 hl = new HyperLink();
-                hl.CssClass = "Botao3 botao3";
+                hl.CssClass = "Botao6 botao6";
                 hl.NavigateUrl = "./ExcluirCliente.aspx?idCliente=" + cliente.idCliente.ToString();
                 hl.Text = "Excluir";
                 cell2.Controls.Add(hl);

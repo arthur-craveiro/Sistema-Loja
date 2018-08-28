@@ -15,11 +15,11 @@
             margin-top:0;
              margin-left:60px;
              background-color:#EAEAEA;
-            opacity:0.8;
-            filter:alpha(opacity=80);
+          
+            
         }
         </style>
-    <div><table  >
+    <table  >
     <tr><td><asp:Label ID="Label1" runat="server" Text="Nome:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label8" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
     <tr><td><asp:Label ID="Label2" runat="server" Text="Telefones:"  Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label9" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
     <tr><td><asp:Label ID="Label3" runat="server" Text="Identidade:"  Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label10" runat="server" Text="Label "  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
@@ -30,6 +30,6 @@
     <tr><td><asp:Label ID="Label14" runat="server" Text="Técnico:"  Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td> <asp:CheckBox ID="CheckBox2" runat="server" /></td>
         <tr><td><asp:Button ID="Button1" runat="server" Text="Excluir" CssClass="Botao5 botao5" OnClick="Button1_Click" /></td>
    <td> <asp:Button ID="Button2" runat="server" Text="Cancelar" CssClass="Botao4 botao4" OnClick="Button2_Click" /></td></tr>
-    </table></div>
+    </table>
     
 </asp:Content>
