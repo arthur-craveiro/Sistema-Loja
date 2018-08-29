@@ -6,7 +6,7 @@
     <asp:HyperLink ID="HyperLink1" runat="server" CssClass="Botao2 botao2" NavigateUrl="~/InserirCliente.aspx">Inserir Cliente</asp:HyperLink>
     <br />
     <asp:Table ID="Table1" runat="server" BackColor="#F3F3F3" Font-Bold="True" Font-Names="Segoe UI" Font-Size="18px" ForeColor="Black" GridLines="horizontal" Width="1200px">
-      <asp:TableRow>
+        <asp:TableRow>
           <asp:TableCell Visible="False">idCliente</asp:TableCell>
           <asp:TableCell>Nome</asp:TableCell>
           <asp:TableCell>Telefones</asp:TableCell>

@@ -24,6 +24,7 @@ namespace Sistemaloja
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             DAL.DALCliente DelectCliente = new DAL.DALCliente();
             List<Modelo.Cliente> clientes = DelectCliente.SelectCliente(int.Parse(Request.QueryString["idCliente"]));
             DelectCliente.Delete(clientes[0].idCliente);

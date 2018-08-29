@@ -17,8 +17,7 @@ namespace Sistemaloja
         protected void Button1_Click(object sender, EventArgs e)
         {
             DAL.DALFuncionario insertFuncionario = new DAL.DALFuncionario();
-            CheckBox1.Checked = true;
-            CheckBox2.Checked = true;
+           
             Modelo.Funcionario Funcionario = new Modelo.Funcionario(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, Convert.ToDouble(TextBox5.Text), Convert.ToBoolean(CheckBox1.Checked), Convert.ToBoolean(CheckBox2.Checked), TextBox6.Text);
             insertFuncionario.InserirFuncionario(Funcionario);
             Response.Redirect("./Funcionario.aspx");

@@ -358,6 +358,12 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
     </style>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+     <script language=javascript>
+         function ConfirmaExclusao() {
+             return confirm('Deseja realmente excluir este registro?');
+         }</script>
+
+
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

@@ -29,7 +29,7 @@
     <tr><td><asp:Label ID="Label5" runat="server" Text="CPF:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label12" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
     <tr><td><asp:Label ID="Label6" runat="server" Text="CNPJ:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label13" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"> </asp:Label></td></tr>
     <tr><td><asp:Label ID="Label7" runat="server" Text="Sigla:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label14" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
-    <tr><td><asp:Button ID="Button1" runat="server" Text="Excluir" CssClass="Botao4 botao4" OnClick="Button1_Click" /></td>
+    <tr><td><asp:Button ID="Button1" runat="server" Text="Excluir" CssClass="Botao4 botao4" OnClientClick="return confirm('Deseja realmente excluir este registro?');" OnClick="Button1_Click"/></td>
         <td><asp:Button ID="Button2" runat="server" Text="Cancelar"  CssClass="Botao5 botao5" OnClick="Button2_Click" /></td></tr>
         </table>
 </asp:Content>
