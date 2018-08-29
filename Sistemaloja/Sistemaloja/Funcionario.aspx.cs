@@ -40,6 +40,7 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 CheckBox cb = new CheckBox();
+                cb.Enabled = false;
                 if (funcionario.motorista)
                 {
                     cb.Checked = true;
@@ -52,6 +53,7 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 CheckBox cb1 = new CheckBox();
+                cb1.Enabled = false;
                 if (funcionario.tecnico)
                 {
                     cb1.Checked = true;
