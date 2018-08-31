@@ -32,7 +32,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado from Cliente";
+            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado,Email from Cliente";
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
             // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -50,7 +50,8 @@ namespace Sistemaloja.DAL
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        (int)dr["idestado"]
+                        (int)dr["idestado"],
+                         dr["Email"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListCliente.Add(aCliente);
@@ -78,7 +79,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado from Cliente where idCliente = @id";
+            cmd.CommandText = "select idCliente, nome, telefones, cidade, endereco, CPF, CNPJ, idestado,Email from Cliente where idCliente = @id";
             cmd.Parameters.AddWithValue("@id", id);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -91,13 +92,14 @@ namespace Sistemaloja.DAL
                     // Cria objeto com dados lidos do banco de dados
                     aCliente = new Modelo.Cliente(
                         (int)dr["idCliente"],
-                        dr["nome"].ToString(),
+                         dr["nome"].ToString(),
                         dr["telefones"].ToString(),
                         dr["cidade"].ToString(),
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        (int)dr["idestado"]
+                        (int)dr["idestado"],
+                         dr["Email"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListCliente.Add(aCliente);
@@ -137,7 +139,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("insert into Cliente(nome,telefones,cidade,endereco,CPF,CNPJ,idestado) values (@nome, @telefones, @cidade, @endereco, @CPF, @CNPJ, @idestado)", conn);
+            SqlCommand cmd = new SqlCommand("insert into Cliente(nome,telefones,cidade,endereco,CPF,CNPJ,idestado,Email) values (@nome, @telefones, @cidade, @endereco, @CPF, @CNPJ, @idestado,@Email)", conn);
             cmd.Parameters.AddWithValue("@nome",cliente.nome);
             cmd.Parameters.AddWithValue("@telefones", cliente.telefones);
             cmd.Parameters.AddWithValue("@cidade", cliente.cidade);
@@ -145,6 +147,7 @@ namespace Sistemaloja.DAL
             cmd.Parameters.AddWithValue("@CPF", cliente.CPF);
             cmd.Parameters.AddWithValue("@CNPJ", cliente.CNPJ);
             cmd.Parameters.AddWithValue("@idestado", cliente.uf.id);
+            cmd.Parameters.AddWithValue("@Email", cliente.Email);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
@@ -158,7 +161,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("update Cliente set nome = @nome, telefones = @telefones, cidade = @cidade, endereco = @endereco, CPF = @CPF, CNPJ = @CNPJ, idestado = @idestado where idCliente = @id", conn);
+            SqlCommand cmd = new SqlCommand("update Cliente set nome = @nome, telefones = @telefones, cidade = @cidade, endereco = @endereco, CPF = @CPF, CNPJ = @CNPJ, idestado = @idestado, Email=@Email where idCliente = @id", conn);
             cmd.Parameters.AddWithValue("@id", cliente.idCliente);
             cmd.Parameters.AddWithValue("@nome", cliente.nome);
             cmd.Parameters.AddWithValue("@telefones", cliente.telefones);
@@ -167,6 +170,8 @@ namespace Sistemaloja.DAL
             cmd.Parameters.AddWithValue("@CPF", cliente.CPF);
             cmd.Parameters.AddWithValue("@CNPJ", cliente.CNPJ);
             cmd.Parameters.AddWithValue("@idestado", cliente.uf.id);
+            cmd.Parameters.AddWithValue("@Email", cliente.Email);
+
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
@@ -198,14 +203,14 @@ namespace Sistemaloja.DAL
                 {
                     // Cria objeto com dados lidos do banco de dados
                     aCliente = new Modelo.Cliente(
-                        (int)dr["idCliente"],
-                        dr["nome"].ToString(),
+                         dr["nome"].ToString(),
                         dr["telefones"].ToString(),
                         dr["cidade"].ToString(),
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        (int)dr["idestado"]
+                        (int)dr["idestado"],
+                         dr["Email"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListCliente.Add(aCliente);

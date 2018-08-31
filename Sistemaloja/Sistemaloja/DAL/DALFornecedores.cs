@@ -50,7 +50,8 @@ namespace Sistemaloja.DAL
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        (int)dr["idestado"]
+                        (int)dr["idestado"],
+                         dr["Email"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListFornecedores.Add(aFornecedores);
@@ -78,7 +79,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand cmd = conn.CreateCommand();
             // define SQL do comando
-            cmd.CommandText = "select idFornecedores, nome, telefones, cidade, endereco, CPF, CNPJ, idestado from Fornecedor where idFornecedores = @id";
+            cmd.CommandText = "select idFornecedores, nome, telefones, cidade, endereco, CPF, CNPJ, idestado,Email from Fornecedor where idFornecedores = @id";
             cmd.Parameters.AddWithValue("@id", id);
             // Executa comando, gerando objeto DbDataReader
             SqlDataReader dr = cmd.ExecuteReader();
@@ -97,7 +98,8 @@ namespace Sistemaloja.DAL
                         dr["endereco"].ToString(),
                         dr["CPF"].ToString(),
                         dr["CNPJ"].ToString(),
-                        (int)dr["idestado"]
+                        (int)dr["idestado"],
+                        dr["Email"].ToString()
                         );
                     // Adiciona o livro lido à lista
                     aListFornecedores.Add(aFornecedores);
@@ -137,7 +139,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("insert into Fornecedor(nome,telefones,cidade,endereco,CPF,CNPJ,idestado) values (@nome, @telefones, @cidade, @endereco, @CPF, @CNPJ, @idestado)", conn);
+            SqlCommand cmd = new SqlCommand("insert into Fornecedor(nome,telefones,cidade,endereco,CPF,CNPJ,idestado,email) values (@nome, @telefones, @cidade, @endereco, @CPF, @CNPJ, @idestado,@Email)", conn);
             cmd.Parameters.AddWithValue("@nome", Fornecedores.nome);
             cmd.Parameters.AddWithValue("@telefones", Fornecedores.telefones);
             cmd.Parameters.AddWithValue("@cidade", Fornecedores.cidade);
@@ -145,6 +147,7 @@ namespace Sistemaloja.DAL
             cmd.Parameters.AddWithValue("@CPF", Fornecedores.CPF);
             cmd.Parameters.AddWithValue("@CNPJ", Fornecedores.CNPJ);
             cmd.Parameters.AddWithValue("@idestado", Fornecedores.uf.id);
+            cmd.Parameters.AddWithValue("@Email", Fornecedores.Email);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
@@ -158,7 +161,7 @@ namespace Sistemaloja.DAL
             // Cria comando SQL
             SqlCommand com = conn.CreateCommand();
             // Define comando de exclusão
-            SqlCommand cmd = new SqlCommand("update Fornecedor set nome = @nome, telefones = @telefones, cidade = @cidade, endereco = @endereco, CPF = @CPF, CNPJ = @CNPJ, idestado = @idestado where idFornecedores = @id", conn);
+            SqlCommand cmd = new SqlCommand("update Fornecedor set nome = @nome, telefones = @telefones, cidade = @cidade, endereco = @endereco, CPF = @CPF, CNPJ = @CNPJ, idestado = @idestado, email=@Email where idFornecedores = @id", conn);
             cmd.Parameters.AddWithValue("@id", Fornecedores.idFornecedores);
             cmd.Parameters.AddWithValue("@nome", Fornecedores.nome);
             cmd.Parameters.AddWithValue("@telefones", Fornecedores.telefones);
@@ -167,6 +170,7 @@ namespace Sistemaloja.DAL
             cmd.Parameters.AddWithValue("@CPF", Fornecedores.CPF);
             cmd.Parameters.AddWithValue("@CNPJ", Fornecedores.CNPJ);
             cmd.Parameters.AddWithValue("@idestado", Fornecedores.uf.id);
+            cmd.Parameters.AddWithValue("@Email", Fornecedores.Email);
             // Executa Comando
             cmd.ExecuteNonQuery();
         }

@@ -26,8 +26,10 @@ namespace Sistemaloja
                 TextBox3.Text = clientes[0].cidade;
                 TextBox4.Text = clientes[0].endereco;
                 TextBox5.Text = clientes[0].CPF;
+                TextBox7.Text = clientes[0].Email;
                 TextBox6.Text = clientes[0].CNPJ;
                 DropDownList1.SelectedValue = clientes[0].uf.id.ToString();
+                
             }
         }
 
@@ -41,6 +43,7 @@ namespace Sistemaloja
             clientes[0].endereco = TextBox4.Text;
             clientes[0].CPF = TextBox5.Text;
             clientes[0].CNPJ = TextBox6.Text;
+            clientes[0].Email = TextBox7.Text;
             clientes[0].uf.id = int.Parse(DropDownList1.SelectedValue);
             AtualizarCliente.AtualizarCliente(clientes[0]);
             Response.Redirect("./Cliente.aspx");

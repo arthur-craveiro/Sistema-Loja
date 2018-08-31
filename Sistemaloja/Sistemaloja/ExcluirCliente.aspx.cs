@@ -19,6 +19,7 @@ namespace Sistemaloja
             Label11.Text = clientes[0].endereco;
             Label12.Text = clientes[0].CPF;
             Label13.Text = clientes[0].CNPJ;
+            Label19.Text = clientes[0].Email;
             Label14.Text = clientes[0].uf.sigla;
         }
 

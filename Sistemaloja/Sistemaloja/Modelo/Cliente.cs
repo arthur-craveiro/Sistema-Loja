@@ -14,6 +14,7 @@ namespace Sistemaloja.Modelo
         public string endereco { get; set; }
         public string CPF { get; set; }
         public string CNPJ { get; set; }
+        public string Email { get; set; }
         public UF uf { get; set; }
         public int estado
         {
@@ -21,7 +22,7 @@ namespace Sistemaloja.Modelo
             set { uf.id = value; }
         }
 
-        public Cliente(int aidCliente, string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aestado ) {
+        public Cliente(int aidCliente, string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aestado,string aEmail) {
             this.idCliente = aidCliente;
             this.nome = anome;
             this.telefones = atelefones;
@@ -31,9 +32,10 @@ namespace Sistemaloja.Modelo
             this.CNPJ = aCNPJ;
             DAL.DALUF daluf = new DAL.DALUF();
             uf = daluf.Select(aestado)[0];
+            this.Email = aEmail;
         }
 
-        public Cliente(string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aestado)
+        public Cliente(string anome, string atelefones, string acidade, string aendereco, string aCPF, string aCNPJ, int aestado,string aEmail)
         {
             this.nome = anome;
             this.telefones = atelefones;
@@ -43,6 +45,7 @@ namespace Sistemaloja.Modelo
             this.CNPJ = aCNPJ;
             DAL.DALUF daluf = new DAL.DALUF();
             uf = daluf.Select(aestado)[0];
+            this.Email = aEmail;
         }
     }
 }

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <center><h1> Fornecedores</h1></center><br />
     <div style="margin-left:1em;">
     <asp:HyperLink ID="HyperLink1" runat="server" CssClass="Botao2 botao2" NavigateUrl="~/InserirFornecedor.aspx">Inserir Fornecedores</asp:HyperLink>
     <br />

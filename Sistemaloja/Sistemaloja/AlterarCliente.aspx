@@ -41,12 +41,14 @@
 					}
     </style>
     <table>
+        <caption>Alterar Dados de Clientes</caption>
     <tr><td><asp:Label ID="Label1" runat="server" Text="Nome:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox></td></tr>
     <tr><td><asp:Label ID="Label2" runat="server" Text="Telefones:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox><br /></td></tr>
     <tr><td><asp:Label ID="Label3" runat="server" Text="Cidade:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI"></asp:TextBox></td></tr><br />
     <tr><td><asp:Label ID="Label4" runat="server" Text="Endereço" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox4" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox></td></tr><br />
     <tr><td><asp:Label ID="Label5" runat="server" Text="CPF:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox5" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox><br /></td></tr>
     <tr><td><asp:Label ID="Label6" runat="server" Text="CNPJ:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox6" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox><br /></td></tr>
+    <tr><td><asp:Label ID="Label7" runat="server" Text="Email:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox7" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox><br /></td></tr>
     <tr><td><asp:DropDownList ID="DropDownList1" runat="server" ForeColor="Black" Font-Bold="true"></asp:DropDownList><br /></td></tr>
     <tr> <td style="padding:20px;"> <asp:Button ID="Button1" runat="server" Text="Atualizar"  cssClass="Botao5 botao5"  OnClick="Button1_Click" /></td><td><asp:Button ID="Button2" runat="server" Text="Cancelar"  cssClass="Botao4 botao4"  OnClick="Button2_Click" /></td></tr>
      </table>

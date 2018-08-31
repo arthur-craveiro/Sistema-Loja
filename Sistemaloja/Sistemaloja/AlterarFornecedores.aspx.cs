@@ -27,7 +27,9 @@ namespace Sistemaloja
                 TextBox4.Text = Fornecedores[0].endereco;
                 TextBox5.Text = Fornecedores[0].CPF;
                 TextBox6.Text = Fornecedores[0].CNPJ;
+                TextBox7.Text = Fornecedores[0].Email;
                 DropDownList1.SelectedValue = Fornecedores[0].uf.id.ToString();
+                
             }
 
         }
@@ -42,6 +44,7 @@ namespace Sistemaloja
             Fornecedores[0].CPF = TextBox5.Text;
             Fornecedores[0].CNPJ = TextBox6.Text;
             Fornecedores[0].uf.id = int.Parse(DropDownList1.SelectedValue);
+            Fornecedores[0].Email = TextBox7.Text;
             AtualizarFornecedores.AtualizarFornecedores(Fornecedores[0]);
             Response.Redirect("./Fornecedores.aspx");
         }

@@ -21,7 +21,7 @@ namespace Sistemaloja
         protected void Button1_Click(object sender, EventArgs e)
         {
             DAL.DALCliente insertCliente = new DAL.DALCliente();
-            Modelo.Cliente cliente = new Modelo.Cliente(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, int.Parse(DropDownList1.SelectedItem.Value));
+            Modelo.Cliente cliente = new Modelo.Cliente(TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text, TextBox6.Text, int.Parse(DropDownList1.SelectedItem.Value),TextBox7.Text);
             insertCliente.InserirCliente(cliente);
             Response.Redirect("./cliente.aspx");
         }

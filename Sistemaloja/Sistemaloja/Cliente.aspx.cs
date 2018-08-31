@@ -41,6 +41,9 @@ namespace Sistemaloja
                 cell2.Text = cliente.uf.sigla.ToString();
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
+                cell2.Text = cliente.Email.ToString();
+                row.Cells.Add(cell2);
+                cell2 = new TableCell();
                 HyperLink hl = new HyperLink();
                 hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./AlterarCliente.aspx?idCliente=" + cliente.idCliente.ToString();

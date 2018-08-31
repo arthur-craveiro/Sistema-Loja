@@ -61,8 +61,10 @@
   <ItemGroup>
     <Content Include="AlterarFornecedores.aspx" />
     <Content Include="AlterarFuncionario.aspx" />
+    <Content Include="AlterarProdutos.aspx" />
     <Content Include="ExcluirFornecedores.aspx" />
     <Content Include="ExcluirFuncionario.aspx" />
+    <Content Include="ExcluirProdutos.aspx" />
     <Content Include="Fornecedores.aspx" />
     <Content Include="Funcionario.aspx" />
     <Content Include="Imagens\background.png" />
@@ -70,6 +72,8 @@
     <Content Include="Imagens\s.png" />
     <Content Include="InserirFornecedor.aspx" />
     <Content Include="InserirFuncionario.aspx" />
+    <Content Include="InserirProdutos.aspx" />
+    <Content Include="Produtos.aspx" />
     <Content Include="TelaInicial.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
@@ -92,10 +96,18 @@
     <Compile Include="AlterarFuncionario.aspx.designer.cs">
       <DependentUpon>AlterarFuncionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlterarProdutos.aspx.cs">
+      <DependentUpon>AlterarProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarProdutos.aspx.designer.cs">
+      <DependentUpon>AlterarProdutos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DALCliente.cs" />
     <Compile Include="DAL\DALFornecedores.cs" />
     <Compile Include="DAL\DALFuncionario.cs" />
     <Compile Include="DAL\DALPagamento.cs" />
+    <Compile Include="DAL\DALProdutos.cs" />
     <Compile Include="DAL\DALUF.cs" />
     <Compile Include="ExcluirFornecedores.aspx.cs">
       <DependentUpon>ExcluirFornecedores.aspx</DependentUpon>
@@ -110,6 +122,13 @@
     </Compile>
     <Compile Include="ExcluirFuncionario.aspx.designer.cs">
       <DependentUpon>ExcluirFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirProdutos.aspx.cs">
+      <DependentUpon>ExcluirProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirProdutos.aspx.designer.cs">
+      <DependentUpon>ExcluirProdutos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Fornecedores.aspx.cs">
       <DependentUpon>Fornecedores.aspx</DependentUpon>
@@ -139,11 +158,26 @@
     <Compile Include="InserirFuncionario.aspx.designer.cs">
       <DependentUpon>InserirFuncionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InserirProdutos.aspx.cs">
+      <DependentUpon>InserirProdutos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirProdutos.aspx.designer.cs">
+      <DependentUpon>InserirProdutos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Fornecedores.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
+    <Compile Include="Modelo\Produtos.cs" />
     <Compile Include="Modelo\UF.cs" />
+    <Compile Include="Produtos.aspx.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Produtos.aspx.designer.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SistemaMaster.Master.cs">
       <DependentUpon>SistemaMaster.Master</DependentUpon>

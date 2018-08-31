@@ -20,6 +20,7 @@
         }
        </style>
     <table>
+        <caption>Cadastro de novo Funcionário</caption>
         <tr>
             <td>
                 <asp:Label ID="Label1" runat="server" Text="Nome" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label>

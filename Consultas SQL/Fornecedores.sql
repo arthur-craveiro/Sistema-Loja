@@ -7,6 +7,7 @@ create table Fornecedor (
 	CPF varchar(14),
 	CNPJ varchar(18),
 	idestado int not null,
+	Email varchar(100) not null,
 	primary key(idFornecedores),
 	foreign key(idestado) references UF(id)
 )

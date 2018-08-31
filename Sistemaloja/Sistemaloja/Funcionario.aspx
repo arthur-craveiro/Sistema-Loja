@@ -2,10 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <center><h1> Funcionários</h1></center><br />
     <div style="margin-left:1em;">
     <asp:HyperLink ID="HyperLink1" runat="server" CssClass="Botao2 botao2" NavigateUrl="~/InserirFuncionario.aspx">Inserir Funcionario</asp:HyperLink>
     <asp:Table ID="Table1" runat="server"  BackColor="#F3F3F3" Font-Bold="True" Font-Names="Segoe UI" Font-Size="18px" ForeColor="Black" GridLines="horizontal" Width="1200px">
         <asp:TableRow>
+
             <asp:TableCell Visible="false">idFuncionario</asp:TableCell>
             <asp:TableCell>Nome</asp:TableCell>
             <asp:TableCell>Telefones</asp:TableCell>

@@ -41,6 +41,7 @@
 					}
     </style>
     <table >
+        <caption>Alterar Dados de Funcionário</caption>
    <tr><td><asp:Label ID="Label1" runat="server" Text="Nome:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox1" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI"></asp:TextBox></td></tr>
      <tr><td><asp:Label ID="Label2" runat="server" Text="Telefones:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox2" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI" ></asp:TextBox><br /></td></tr>
      <tr><td><asp:Label ID="Label3" runat="server" Text="Identidade:" ForeColor="Black" Font-Bold="true"></asp:Label></td><td>&nbsp;&nbsp;&nbsp;<asp:TextBox ID="TextBox3" runat="server" BorderStyle="NotSet" BackColor="#EAEAEA" Font-Size="18px" Font-Names="Segoe UI"></asp:TextBox><br /></td></tr>

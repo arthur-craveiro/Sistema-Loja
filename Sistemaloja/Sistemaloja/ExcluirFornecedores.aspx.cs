@@ -19,6 +19,7 @@ namespace Sistemaloja
             Label11.Text = Fornecedores[0].endereco;
             Label12.Text = Fornecedores[0].CPF;
             Label13.Text = Fornecedores[0].CNPJ;
+            Label19.Text = Fornecedores[0].Email;
             Label14.Text = Fornecedores[0].uf.sigla;
         }
         protected void Button1_Click(object sender, EventArgs e)

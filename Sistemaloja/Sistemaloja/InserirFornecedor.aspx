@@ -20,6 +20,7 @@
         }
        </style>
     <table>
+        <caption>Cadastro de novo Fornecedor</caption>
     <tr><td><asp:Label ID="Label1" runat="server" Text="Nome:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td>
         <td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
     </tr>
@@ -28,6 +29,7 @@
      <tr><td><asp:Label ID="Label4" runat="server" Text="Endereco:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox><br /></td></tr>
       <tr><td><asp:Label ID="Label5" runat="server" Text="CPF:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:TextBox ID="TextBox5" runat="server"></asp:TextBox><br /></td></tr>
     <tr><td> <asp:Label ID="Label6" runat="server" Text="CNPJ:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:TextBox ID="TextBox6" runat="server"></asp:TextBox><br /></td></tr>
+        <tr><td> <asp:Label ID="Label8" runat="server" Text="Email:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:TextBox ID="TextBox7" runat="server"></asp:TextBox><br /></td></tr>
 
      <tr>
          <td><asp:Label ID="Label7" runat="server" Text="UF:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td>

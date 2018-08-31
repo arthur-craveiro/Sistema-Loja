@@ -20,6 +20,7 @@
         }
         </style>
     <table  >
+        <caption>Excluir Funcionário</caption>
     <tr><td><asp:Label ID="Label1" runat="server" Text="Nome:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label8" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
     <tr><td><asp:Label ID="Label2" runat="server" Text="Telefones:"  Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label9" runat="server" Text="Label"  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
     <tr><td><asp:Label ID="Label3" runat="server" Text="Identidade:"  Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td><td><asp:Label ID="Label10" runat="server" Text="Label "  Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td></tr>
