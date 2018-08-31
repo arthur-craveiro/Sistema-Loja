@@ -80,6 +80,7 @@
     <Content Include="ExcluirCliente.aspx" />
     <Content Include="AlterarCliente.aspx" />
     <Content Include="InserirCliente.aspx" />
+    <Content Include="Pagamento.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlterarFornecedores.aspx.cs">
@@ -220,6 +221,13 @@
     </Compile>
     <Compile Include="InserirCliente.aspx.designer.cs">
       <DependentUpon>InserirCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pagamento.aspx.cs">
+      <DependentUpon>Pagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pagamento.aspx.designer.cs">
+      <DependentUpon>Pagamento.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
