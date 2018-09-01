@@ -81,6 +81,7 @@
     <Content Include="AlterarCliente.aspx" />
     <Content Include="InserirCliente.aspx" />
     <Content Include="Pagamento.aspx" />
+    <Content Include="InserirPagamento.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlterarFornecedores.aspx.cs">
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="Pagamento.aspx.designer.cs">
       <DependentUpon>Pagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserirPagamento.aspx.cs">
+      <DependentUpon>InserirPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirPagamento.aspx.designer.cs">
+      <DependentUpon>InserirPagamento.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

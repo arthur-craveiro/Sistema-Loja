@@ -396,7 +396,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 	
     <li><a style="color:white; text-decoration: none; cursor:pointer;"><label style="cursor:pointer;" for="chk" >Fechar</label></a></li>    
     <li><a href="#cadastros" style="color:white;">Cadastros<span> >> </span></a></li>
-    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="" ForeColor="White">Pagamentos</asp:HyperLink></li>
+    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Pagamento.aspx" ForeColor="White">Pagamentos</asp:HyperLink></li>
 	<li><a href="#relatorios" style="color:white;">Relatórios<span> >> </span></a></li>
 
 </ul>

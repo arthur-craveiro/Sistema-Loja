@@ -110,5 +110,24 @@ namespace Sistemaloja.DAL
             conn.Close();
             return aListPagamento;
         }
+
+        public void InserirPagamento(Modelo.Pagamento pagamento)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("insert into Pagamento(valorPago,dataDePagamento,mesReferencia,anoReferencia,idFuncionario) values(@valorPago,@dataDePagamento,@mesReferencia,@anoReferencia, @idFuncionario)", conn);
+            cmd.Parameters.AddWithValue("@valorPago", pagamento.valorPago);
+            cmd.Parameters.AddWithValue("@dataDePagamento", pagamento.dataDePagamento);
+            cmd.Parameters.AddWithValue("@mesReferencia", pagamento.mesReferencia);
+            cmd.Parameters.AddWithValue("@anoReferencia", pagamento.anoReferencia);
+            cmd.Parameters.AddWithValue("@idFuncionario", pagamento.idFuncionario);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
     }
 }
