@@ -7,7 +7,7 @@ namespace Sistemaloja.Modelo
 {
     public class Fornecedores
     {
-          public int idFornecedores { get; set; }
+        public int idFornecedores { get; set; }
         public string nome { get; set; }
         public string telefones { get; set; }
         public string cidade { get; set; }
