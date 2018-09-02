@@ -24,7 +24,7 @@ namespace Sistemaloja.DAL
             Modelo.Funcionario aFuncionario;
             List<Modelo.Funcionario> aListFuncionario = new List<Modelo.Funcionario>();
             SqlConnection conn = new SqlConnection(connectionString);
-           conn.Open();
+            conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandText = "Select * from Funcionario";
             SqlDataReader dr = cmd.ExecuteReader();
