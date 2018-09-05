@@ -106,6 +106,7 @@
       <DependentUpon>AlterarProdutos.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALCliente.cs" />
+    <Compile Include="DAL\DALCompras.cs" />
     <Compile Include="DAL\DALFornecedores.cs" />
     <Compile Include="DAL\DALFuncionario.cs" />
     <Compile Include="DAL\DALPagamento.cs" />
@@ -168,6 +169,7 @@
       <DependentUpon>InserirProdutos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
+    <Compile Include="Modelo\Compras.cs" />
     <Compile Include="Modelo\Fornecedores.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
