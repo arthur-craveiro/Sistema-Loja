@@ -63,19 +63,19 @@ namespace Sistemaloja
                 cell2 = new TableCell();
                 cell2.Text = pagamento.valorPago.ToString();
                 row.Cells.Add(cell2);  
-                /*HyperLink hl = new HyperLink();
+                HyperLink hl = new HyperLink();
                 hl.CssClass = "Botao3 botao3";
-                hl.NavigateUrl = "./AlterarCliente.aspx?idCliente=" + cliente.idCliente.ToString();
+                hl.NavigateUrl = "./AlterarPagamento.aspx?idPagamento=" + pagamento.idPagamento.ToString();
                 hl.Text = "Editar";
                 cell2.Controls.Add(hl);
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 hl = new HyperLink();
                 hl.CssClass = "Botao6 botao6";
-                hl.NavigateUrl = "./ExcluirCliente.aspx?idCliente=" + cliente.idCliente.ToString();
+                hl.NavigateUrl = "./ExcluirPagamento.aspx?idPagamento=" + pagamento.idPagamento.ToString();
                 hl.Text = "Excluir";
                 cell2.Controls.Add(hl);
-                row.Cells.Add(cell2);*/
+                row.Cells.Add(cell2);
                 Table1.Rows.Add(row);
                 valorpago = valorpago + pagamento.valorPago;
             }

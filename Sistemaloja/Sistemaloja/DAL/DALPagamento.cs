@@ -79,6 +79,37 @@ namespace Sistemaloja.DAL
             return aListPagamento;
         }
 
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Pagamento> SelectPagamentoAll(int idPagamento)
+        {
+            Modelo.Pagamento aPagamento;
+            List<Modelo.Pagamento> aListPagamento = new List<Modelo.Pagamento>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Pagamento where idPagamento = @idPagamento";
+            cmd.Parameters.AddWithValue("@idPagamento", idPagamento);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    aPagamento = new Modelo.Pagamento(
+                        (int)dr["idPagamento"],
+                        Convert.ToDouble(dr["valorPago"]),
+                        (DateTime)dr["dataDePagamento"],
+                        (int)dr["mesReferencia"],
+                        (int)dr["anoReferencia"],
+                        (int)dr["idFuncionario"]
+                        );
+                    aListPagamento.Add(aPagamento);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return aListPagamento;
+        }
+
         public List<Modelo.Pagamento> SelectPagamentoMes(int MesReferencia, int AnoReferencia, int idFuncionario)
         {
             Modelo.Pagamento aPagamento;
@@ -126,6 +157,23 @@ namespace Sistemaloja.DAL
             cmd.Parameters.AddWithValue("@mesReferencia", pagamento.mesReferencia);
             cmd.Parameters.AddWithValue("@anoReferencia", pagamento.anoReferencia);
             cmd.Parameters.AddWithValue("@idFuncionario", pagamento.idFuncionario);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Delete)]
+        public void Delete(int id)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("DELETE FROM Pagamento WHERE idPagamento = @id", conn);
+            cmd.Parameters.AddWithValue("@id", id);
+
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
