@@ -61,9 +61,11 @@
   <ItemGroup>
     <Content Include="AlterarFornecedores.aspx" />
     <Content Include="AlterarFuncionario.aspx" />
+    <Content Include="AlterarPagamento.aspx" />
     <Content Include="AlterarProdutos.aspx" />
     <Content Include="ExcluirFornecedores.aspx" />
     <Content Include="ExcluirFuncionario.aspx" />
+    <Content Include="ExcluirPagamento.aspx" />
     <Content Include="ExcluirProdutos.aspx" />
     <Content Include="Fornecedores.aspx" />
     <Content Include="Funcionario.aspx" />
@@ -98,6 +100,13 @@
     <Compile Include="AlterarFuncionario.aspx.designer.cs">
       <DependentUpon>AlterarFuncionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlterarPagamento.aspx.cs">
+      <DependentUpon>AlterarPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarPagamento.aspx.designer.cs">
+      <DependentUpon>AlterarPagamento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlterarProdutos.aspx.cs">
       <DependentUpon>AlterarProdutos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -125,6 +134,13 @@
     </Compile>
     <Compile Include="ExcluirFuncionario.aspx.designer.cs">
       <DependentUpon>ExcluirFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirPagamento.aspx.cs">
+      <DependentUpon>ExcluirPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirPagamento.aspx.designer.cs">
+      <DependentUpon>ExcluirPagamento.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExcluirProdutos.aspx.cs">
       <DependentUpon>ExcluirProdutos.aspx</DependentUpon>

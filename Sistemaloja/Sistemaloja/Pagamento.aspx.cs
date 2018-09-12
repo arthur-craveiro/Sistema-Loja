@@ -49,7 +49,13 @@ namespace Sistemaloja
         {
             double valorpago = 0;
             int mes = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[0])));
-            int ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[2])) + Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5]))); 
+            int ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[2])) + Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5])));
+
+            if(mes >= 10) {
+                mes = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[0])) + Convert.ToString((DropDownList2.SelectedValue[1])));
+                ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5])) + Convert.ToString((DropDownList2.SelectedValue[6])));
+            }
+
             DAL.DALPagamento SelectPagamento = new DAL.DALPagamento();
             List<Modelo.Pagamento> pagamentos = SelectPagamento.SelectPagamentoMes(mes, ano, int.Parse(DropDownList1.SelectedValue));
             foreach (Modelo.Pagamento pagamento in pagamentos) {
@@ -62,7 +68,8 @@ namespace Sistemaloja
                 row.Cells.Add(cell2);
                 cell2 = new TableCell();
                 cell2.Text = pagamento.valorPago.ToString();
-                row.Cells.Add(cell2);  
+                row.Cells.Add(cell2);
+                cell2 = new TableCell();
                 HyperLink hl = new HyperLink();
                 hl.CssClass = "Botao3 botao3";
                 hl.NavigateUrl = "./AlterarPagamento.aspx?idPagamento=" + pagamento.idPagamento.ToString();
