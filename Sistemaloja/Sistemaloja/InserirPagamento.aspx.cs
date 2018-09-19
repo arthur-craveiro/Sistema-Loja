@@ -33,6 +33,7 @@ namespace Sistemaloja
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            DateTime teste = Calendar1.SelectedDate;
             Modelo.Pagamento pagamento = new Modelo.Pagamento(double.Parse(TextBox1.Text),Calendar1.SelectedDate,int.Parse(DropDownList1.SelectedValue),int.Parse(DropDownList2.SelectedValue),int.Parse(DropDownList3.SelectedValue));
             DAL.DALPagamento InsertPagamento = new DAL.DALPagamento();
             InsertPagamento.InserirPagamento( pagamento);

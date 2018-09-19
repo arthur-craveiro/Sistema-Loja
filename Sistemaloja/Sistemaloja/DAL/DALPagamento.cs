@@ -160,6 +160,26 @@ namespace Sistemaloja.DAL
             // Executa Comando
             cmd.ExecuteNonQuery();
         }
+        
+        public void AtualizarPagamento(Modelo.Pagamento pagamento)
+        {
+            // Cria Conexão com banco de dados
+            SqlConnection conn = new SqlConnection(connectionString);
+            // Abre conexão com o banco de dados
+            conn.Open();
+            // Cria comando SQL
+            SqlCommand com = conn.CreateCommand();
+            // Define comando de exclusão
+            SqlCommand cmd = new SqlCommand("update Pagamento set valorPago = @valorPago, dataDePagamento = @dataDePagamento, mesReferencia = @mesReferencia, anoReferencia = @anoReferencia, idFuncionario = @idFuncionario where idPagamento = @id", conn);
+            cmd.Parameters.AddWithValue("@id", pagamento.idPagamento);
+            cmd.Parameters.AddWithValue("@valorPago", pagamento.valorPago);
+            cmd.Parameters.AddWithValue("@dataDePagamento", pagamento.dataDePagamento);
+            cmd.Parameters.AddWithValue("@mesReferencia", pagamento.mesReferencia);
+            cmd.Parameters.AddWithValue("@anoReferencia", pagamento.anoReferencia);
+            cmd.Parameters.AddWithValue("@idFuncionario", pagamento.idFuncionario);
+            // Executa Comando
+            cmd.ExecuteNonQuery();
+        }
 
         [DataObjectMethod(DataObjectMethodType.Delete)]
         public void Delete(int id)

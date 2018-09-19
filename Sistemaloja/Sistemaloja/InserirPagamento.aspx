@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div style="  margin-left:60px;">
+ <div style="margin-left:60px;">
     <table style="background-color:#e4dada; color:#0094ff;">
     <tr><td style="padding:10px;"><asp:Label ID="Label1" runat="server" Text="Valor pago" Font-Names="Segoe UI"></asp:Label></td><td><asp:TextBox ID="TextBox1" runat="server" Width="200px" Height="30px" BackColor="#cccccc"></asp:TextBox></td></tr>
     <tr><td style="padding:10px;"><asp:Label ID="Label2" runat="server" Text="Data do pagamento" Font-Names="Segoe UI"></asp:Label></td><td ><asp:Calendar ID="Calendar1" runat="server"></asp:Calendar></td></tr>

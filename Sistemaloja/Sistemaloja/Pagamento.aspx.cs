@@ -15,43 +15,53 @@ namespace Sistemaloja
             {
                 DAL.DALFuncionario SelectFuncionario = new DAL.DALFuncionario();
                 List<Modelo.Funcionario> funcionarios = SelectFuncionario.SelectAll();
-                foreach (Modelo.Funcionario funcionario in funcionarios)
+                if (funcionarios.Count >= 1)
                 {
-                    DropDownList1.Items.Add(new ListItem(funcionario.nome, funcionario.idFuncionario.ToString()));
-                }
-                DAL.DALPagamento SelectPagamento = new DAL.DALPagamento();
-                List<Modelo.Pagamento> pagamentos = SelectPagamento.SelectPagamento(int.Parse(DropDownList1.SelectedValue));
-                int contador = 0;
-                foreach (Modelo.Pagamento pagamento in pagamentos)
-                {
-                    if (contador == 0)
+                    foreach (Modelo.Funcionario funcionario in funcionarios)
                     {
-                        DropDownList2.Items.Add(new ListItem(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString(), pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString()));
+                        DropDownList1.Items.Add(new ListItem(funcionario.nome, funcionario.idFuncionario.ToString()));
                     }
-                    else {
-                        if (DropDownList2.Items.Contains(DropDownList2.Items.FindByText(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString())))
+                    DAL.DALPagamento SelectPagamento = new DAL.DALPagamento();
+                    List<Modelo.Pagamento> pagamentos = SelectPagamento.SelectPagamento(int.Parse(DropDownList1.SelectedValue));
+                    int contador = 0;
+                    foreach (Modelo.Pagamento pagamento in pagamentos)
+                    {
+                        if (contador == 0)
                         {
                             DropDownList2.Items.Add(new ListItem(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString(), pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString()));
-                            DropDownList2.Items.RemoveAt(DropDownList2.Items.Count - 1);
                         }
-                        else {
-                            DropDownList2.Items.Add(new ListItem(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString(), pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString()));
+                        else
+                        {
+                            if (DropDownList2.Items.Contains(DropDownList2.Items.FindByText(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString())))
+                            {
+                                DropDownList2.Items.Add(new ListItem(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString(), pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString()));
+                                DropDownList2.Items.RemoveAt(DropDownList2.Items.Count - 1);
+                            }
+                            else
+                            {
+                                DropDownList2.Items.Add(new ListItem(pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString(), pagamento.mesReferencia.ToString() + "/" + pagamento.anoReferencia.ToString()));
+                            }
                         }
+                        contador = contador + 1;
                     }
-                    contador = contador + 1;
+                    List<Modelo.Funcionario> funcionarios1 = SelectFuncionario.Select(int.Parse(DropDownList1.SelectedValue));
+                    Label4.Text = funcionarios1[0].salario.ToString();
                 }
-                List<Modelo.Funcionario> funcionarios1 = SelectFuncionario.Select(int.Parse(DropDownList1.SelectedValue));
-                Label4.Text = funcionarios1[0].salario.ToString();
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             double valorpago = 0;
-            int mes = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[0])));
-            int ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[2])) + Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5])));
-
-            if(mes >= 10) {
+            string aux = Convert.ToString((DropDownList2.SelectedValue[1]));
+            int mes = 0;
+            int ano = 0;
+            if (aux == "/")
+            {
+                mes = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[0])));
+                ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[2])) + Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5])));
+            }
+            else {
                 mes = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[0])) + Convert.ToString((DropDownList2.SelectedValue[1])));
                 ano = Convert.ToInt32(Convert.ToString((DropDownList2.SelectedValue[3])) + Convert.ToString((DropDownList2.SelectedValue[4])) + Convert.ToString((DropDownList2.SelectedValue[5])) + Convert.ToString((DropDownList2.SelectedValue[6])));
             }

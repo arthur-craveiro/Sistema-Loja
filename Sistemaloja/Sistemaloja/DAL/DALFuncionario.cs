@@ -83,6 +83,38 @@ namespace Sistemaloja.DAL
             conn.Close();
             return listFun; 
         }
+        [DataObjectMethod(DataObjectMethodType.Select)]
+        public List<Modelo.Funcionario> SelectNome(string nome)
+        {
+            Modelo.Funcionario funcionario;
+            List<Modelo.Funcionario> listFun = new List<Modelo.Funcionario>();
+            SqlConnection conn = new SqlConnection(connectionString);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandText = "Select * from Funcionario Where nome = @nome";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    funcionario = new Modelo.Funcionario(
+                        Convert.ToInt32(dr["idFuncionario"]),
+                        dr["nome"].ToString(),
+                        dr["telefones"].ToString(),
+                        dr["identidade"].ToString(),
+                        dr["carteiradetrabalho"].ToString(),
+                         Convert.ToDouble(dr["salario"]),
+                        Convert.ToBoolean(dr["motorista"]),
+                        Convert.ToBoolean(dr["tecnico"]),
+                        dr["observacao"].ToString());
+                    listFun.Add(funcionario);
+                }
+            }
+            dr.Close();
+            conn.Close();
+            return listFun;
+        }
         public void AtualizarFuncionario(Modelo.Funcionario funcionario)
         {
             // Cria Conexão com banco de dados
