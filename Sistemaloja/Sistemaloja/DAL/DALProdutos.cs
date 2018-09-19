@@ -44,9 +44,8 @@ namespace Sistemaloja.DAL
                     // Cria objeto com dados lidos do banco de dados
                     aProdutos = new Modelo.Produtos(
                        (int)dr["idProduto"],
-                        dr["descricao"].ToString(),
-                        dr["codigo"].ToString()
-
+                        dr["codigo"].ToString(),
+                        dr["descricao"].ToString()
                        );
                     // Adiciona o livro lido à lista
                     aListProdutos.Add(aProdutos);
@@ -87,9 +86,8 @@ namespace Sistemaloja.DAL
                     // Cria objeto com dados lidos do banco de dados
                     aProdutos = new Modelo.Produtos(
                        (int)dr["idProduto"],
-                        dr["descricao"].ToString(),
-                        dr["codigo"].ToString()
-
+                        dr["codigo"].ToString(),
+                        dr["descricao"].ToString()
                        );
                     // Adiciona o livro lido à lista
                     aListProdutos.Add(aProdutos);

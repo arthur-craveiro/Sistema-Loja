@@ -19,8 +19,8 @@ namespace Sistemaloja.Modelo
         }
         public Produtos(string acodigo, string adescricao)
         { 
-            this.descricao = adescricao;
             this.codigo = acodigo;
+            this.descricao = adescricao;
         }
    
 
