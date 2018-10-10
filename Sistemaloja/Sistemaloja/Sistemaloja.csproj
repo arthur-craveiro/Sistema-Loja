@@ -118,9 +118,12 @@
     <Compile Include="DAL\DALCompras.cs" />
     <Compile Include="DAL\DALFornecedores.cs" />
     <Compile Include="DAL\DALFuncionario.cs" />
+    <Compile Include="DAL\DALItemCompra.cs" />
+    <Compile Include="DAL\DALItemVenda.cs" />
     <Compile Include="DAL\DALPagamento.cs" />
     <Compile Include="DAL\DALProdutos.cs" />
     <Compile Include="DAL\DALUF.cs" />
+    <Compile Include="DAL\DALVenda.cs" />
     <Compile Include="ExcluirFornecedores.aspx.cs">
       <DependentUpon>ExcluirFornecedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,12 +188,15 @@
       <DependentUpon>InserirProdutos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
-    <Compile Include="Modelo\Compras.cs" />
+    <Compile Include="Modelo\Compra.cs" />
     <Compile Include="Modelo\Fornecedores.cs" />
     <Compile Include="Modelo\Funcionario.cs" />
+    <Compile Include="Modelo\ItensCompra.cs" />
+    <Compile Include="Modelo\ItensVenda.cs" />
     <Compile Include="Modelo\Pagamento.cs" />
     <Compile Include="Modelo\Produtos.cs" />
     <Compile Include="Modelo\UF.cs" />
+    <Compile Include="Modelo\Venda.cs" />
     <Compile Include="Produtos.aspx.cs">
       <DependentUpon>Produtos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

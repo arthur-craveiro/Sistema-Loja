@@ -8,23 +8,23 @@ using System.Web;
 
 namespace Sistemaloja.DAL
 {
-    public class DALCompras
+    public class DALVenda
     {
         private string connectionString;
 
-         public DALCompras()
+        public DALVenda()
         {
             connectionString = ConfigurationManager.ConnectionStrings
             ["aspnetdbConnectionString"].ConnectionString;
         }
 
          [DataObjectMethod(DataObjectMethodType.Select)]
-         public List<Modelo.Compra> SelectAll()
+         public List<Modelo.Venda> SelectAll()
          {
              // Variavel para armazenar um livro
-             Modelo.Compra aCompras;
+             Modelo.Venda aVendas;
              // Cria Lista Vazia
-             List<Modelo.Compra> aListCompras = new List<Modelo.Compra>();
+             List<Modelo.Venda> aListVendas = new List<Modelo.Venda>();
              // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
              // Abre conexão com o banco de dados
@@ -32,7 +32,7 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand cmd = conn.CreateCommand();
              // define SQL do comando
-             cmd.CommandText = "Select * from Compra";
+             cmd.CommandText = "Select * from Venda";
              // Executa comando, gerando objeto DbDataReader
              SqlDataReader dr = cmd.ExecuteReader();
              // Le titulo do livro do resultado e apresenta no segundo rótulo
@@ -42,15 +42,15 @@ namespace Sistemaloja.DAL
                  while (dr.Read()) // Le o proximo registro
                  {
                      // Cria objeto com dados lidos do banco de dados
-                     aCompras = new Modelo.Compra(
-                         (int)dr["idCompra"],
+                     aVendas = new Modelo.Venda(
+                         (int)dr["idVenda"],
                          (DateTime)dr["datas"],
                          (double)dr["desconto"],
                          (double)dr["valorTotal"],
-                         (int)dr["idFornecedores"]
+                         (int)dr["idCliente"]
                          );
                      // Adiciona o livro lido à lista
-                     aListCompras.Add(aCompras);
+                     aListVendas.Add(aVendas);
                  }
              }
              // Fecha DataReader
@@ -58,16 +58,16 @@ namespace Sistemaloja.DAL
              // Fecha Conexão
              conn.Close();
 
-             return aListCompras;
+             return aListVendas;
          }
 
          [DataObjectMethod(DataObjectMethodType.Select)]
-         public List<Modelo.Compra> SelectCompras(int id)
+         public List<Modelo.Venda> SelectVendas(int id)
          {
              // Variavel para armazenar um livro
-             Modelo.Compra aCompras;
+             Modelo.Venda aVendas;
              // Cria Lista Vazia
-             List<Modelo.Compra> aListCompras = new List<Modelo.Compra>();
+             List<Modelo.Venda> aListVendas = new List<Modelo.Venda>();
              // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
              // Abre conexão com o banco de dados
@@ -75,7 +75,7 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand cmd = conn.CreateCommand();
              // define SQL do comando
-             cmd.CommandText = "select * from Compra where idCompra = @id";
+             cmd.CommandText = "select * from Venda where idVenda = @id";
              cmd.Parameters.AddWithValue("@id", id);
              // Executa comando, gerando objeto DbDataReader
              SqlDataReader dr = cmd.ExecuteReader();
@@ -86,15 +86,15 @@ namespace Sistemaloja.DAL
                  while (dr.Read()) // Le o proximo registro
                  {
                      // Cria objeto com dados lidos do banco de dados
-                     aCompras = new Modelo.Compra(
-                         (int)dr["idCompra"],
+                     aVendas = new Modelo.Venda(
+                         (int)dr["idVenda"],
                          (DateTime)dr["datas"],
                          (double)dr["desconto"],
                          (double)dr["valorTotal"],
-                         (int)dr["idFornecedores"]
+                         (int)dr["idCliente"]
                          );
                      // Adiciona o livro lido à lista
-                     aListCompras.Add(aCompras);
+                     aListVendas.Add(aVendas);
                  }
              }
              // Fecha DataReader
@@ -102,10 +102,10 @@ namespace Sistemaloja.DAL
              // Fecha Conexão
              conn.Close();
 
-             return aListCompras;
+             return aListVendas;
          }
-
-         [DataObjectMethod(DataObjectMethodType.Delete)]
+         
+        [DataObjectMethod(DataObjectMethodType.Delete)]
          public void Delete(int id)
          {
              // Cria Conexão com banco de dados
@@ -115,14 +115,14 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand com = conn.CreateCommand();
              // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("DELETE FROM Compra WHERE idCompra = @id", conn);
+             SqlCommand cmd = new SqlCommand("DELETE FROM Venda WHERE idVenda = @id", conn);
              cmd.Parameters.AddWithValue("@id", id);
 
              // Executa Comando
              cmd.ExecuteNonQuery();
          }
 
-         public void InserirCompras(Modelo.Compra Compra)
+         public void InserirCompras(Modelo.Venda Venda)
          {
              // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
@@ -131,16 +131,16 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand com = conn.CreateCommand();
              // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("insert into Compra(datas, desconto, valorTotal, idFornecedores) values (@datas, @desconto, @idFornecedores)", conn);
-             cmd.Parameters.AddWithValue("@datas", Compra.datas);
-             cmd.Parameters.AddWithValue("@desconto", Compra.desconto);
-             cmd.Parameters.AddWithValue("@valorTotal", Compra.valorTotal);
-             cmd.Parameters.AddWithValue("@idFornecedores", Compra.idFornecedores);
+             SqlCommand cmd = new SqlCommand("insert into Venda(datas, desconto, valorTotal, idCliente) values (@datas, @desconto, @idCliente)", conn);
+             cmd.Parameters.AddWithValue("@datas", Venda.datas);
+             cmd.Parameters.AddWithValue("@desconto", Venda.desconto);
+             cmd.Parameters.AddWithValue("@valorTotal", Venda.valorTotal);
+             cmd.Parameters.AddWithValue("@idCliente", Venda.idCliente);
              // Executa Comando
              cmd.ExecuteNonQuery();
          }
 
-         public void AtualizarCompras(Modelo.Compra Compra)
+         public void AtualizarVendas(Modelo.Venda Venda)
          {
              // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
@@ -149,11 +149,11 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand com = conn.CreateCommand();
              // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("update Compra set datas = @datas, desconto = @desconto, valorTotal = @valorTotal, idFornecedores = @idFornecedores where idCompra = @id", conn);
-             cmd.Parameters.AddWithValue("@datas", Compra.datas);
-             cmd.Parameters.AddWithValue("@desconto", Compra.desconto);
-             cmd.Parameters.AddWithValue("@valorTotal", Compra.valorTotal);
-             cmd.Parameters.AddWithValue("@idFornecedores", Compra.idFornecedores);
+             SqlCommand cmd = new SqlCommand("update Venda set datas = @datas, desconto = @desconto, valorTotal = @valorTotal, idCliente = @idCliente where idVenda = @id", conn);
+             cmd.Parameters.AddWithValue("@datas", Venda.datas);
+             cmd.Parameters.AddWithValue("@desconto", Venda.desconto);
+             cmd.Parameters.AddWithValue("@valorTotal", Venda.valorTotal);
+             cmd.Parameters.AddWithValue("@idCliente", Venda.idCliente);
              // Executa Comando
              cmd.ExecuteNonQuery();
          }
