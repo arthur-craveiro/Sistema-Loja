@@ -28,9 +28,9 @@
     </asp:Table>
     <table>
         <tr>
-      
-    <td><asp:Label ID="Label5" runat="server" Text="Valor dos pagamentos feitos:"></asp:Label>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label6" runat="server" Text=""></asp:Label>
-   </td><td>&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label7" runat="server" Text="Valor devido:"></asp:Label>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label8" runat="server" Text=""></asp:Label></td> 
-         <td> &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink1" CssClass="Botao2 botao2" runat="server" NavigateUrl="~/InserirPagamento.aspx">Incluir pagamento</asp:HyperLink></td></tr>
-        </table>
+             <td><asp:Label ID="Label5" runat="server" Text="Valor dos pagamentos feitos:"></asp:Label>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+             </td><td>&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label7" runat="server" Text="Valor devido:"></asp:Label>&nbsp;&nbsp;&nbsp;<asp:Label ID="Label8" runat="server" Text=""></asp:Label></td> 
+             <td> &nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink1" CssClass="Botao2 botao2" runat="server" NavigateUrl="~/InserirPagamento.aspx">Incluir pagamento</asp:HyperLink></td>
+        </tr>
+    </table>
 </asp:Content>

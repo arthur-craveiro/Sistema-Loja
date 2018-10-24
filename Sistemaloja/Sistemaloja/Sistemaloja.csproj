@@ -63,6 +63,7 @@
     <Content Include="AlterarFuncionario.aspx" />
     <Content Include="AlterarPagamento.aspx" />
     <Content Include="AlterarProdutos.aspx" />
+    <Content Include="Compras.aspx" />
     <Content Include="ExcluirFornecedores.aspx" />
     <Content Include="ExcluirFuncionario.aspx" />
     <Content Include="ExcluirPagamento.aspx" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="AlterarProdutos.aspx.designer.cs">
       <DependentUpon>AlterarProdutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALCliente.cs" />
     <Compile Include="DAL\DALCompras.cs" />
