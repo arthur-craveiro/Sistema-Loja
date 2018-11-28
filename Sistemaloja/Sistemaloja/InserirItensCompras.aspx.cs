@@ -23,7 +23,7 @@ namespace Sistemaloja
             dalitem.InserirItensCompra(itemCompra);
             DAL.DALCompras dalcompra = new DAL.DALCompras();
             Modelo.Compra compra = dalcompra.SelectCompras(idCompra)[0];
-            compra.valorTotal = compra.valorTotal + precoTotal;
+            compra.valorTotal = compra.valorTotal + precoTotal - compra.desconto;
             dalcompra.AtualizarCompras(compra);
             Response.Redirect("./InserirCompras.aspx?idCompra=" + idCompra);
         }

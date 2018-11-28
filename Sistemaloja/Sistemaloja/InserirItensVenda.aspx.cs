@@ -23,7 +23,7 @@ namespace Sistemaloja
             dalitem.InserirItensVenda(itemVenda);
             DAL.DALVenda dalvenda = new DAL.DALVenda();
             Modelo.Venda venda = dalvenda.SelectVendas(idVenda)[0];
-            venda.valorTotal = venda.valorTotal + valorTotal;
+            venda.valorTotal = venda.valorTotal + valorTotal - venda.desconto;
             dalvenda.AtualizarVendas(venda);
             Response.Redirect("./InserirVendas.aspx?idVenda=" + idVenda);
         }
