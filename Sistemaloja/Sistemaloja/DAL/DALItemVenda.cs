@@ -34,9 +34,9 @@ namespace Sistemaloja.DAL
                  {
                      aItensVenda = new Modelo.ItensVenda(
                          (int)dr["idItem"],
-                         (double)dr["peso"],
-                         (double)dr["precokg"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["peso"]),
+                         Convert.ToDouble(dr["precokg"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idVenda"],
                          (int)dr["idProduto"]
                          );
@@ -49,7 +49,7 @@ namespace Sistemaloja.DAL
          }
 
          [DataObjectMethod(DataObjectMethodType.Select)]
-         public List<Modelo.ItensVenda> SelectItemCompra(int id)
+         public List<Modelo.ItensVenda> SelectItemVenda(int id)
          {
              Modelo.ItensVenda aItensVenda;
              List<Modelo.ItensVenda> aListItensVenda = new List<Modelo.ItensVenda>();
@@ -65,9 +65,40 @@ namespace Sistemaloja.DAL
                  {
                      aItensVenda = new Modelo.ItensVenda(
                          (int)dr["idItem"],
-                         (double)dr["peso"],
-                         (double)dr["precokg"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["peso"]),
+                         Convert.ToDouble(dr["precokg"]),
+                         Convert.ToDouble(dr["valorTotal"]),
+                         (int)dr["idVenda"],
+                         (int)dr["idProduto"]
+                         );
+                     aListItensVenda.Add(aItensVenda);
+                 }
+             }
+             dr.Close();
+             conn.Close();
+             return aListItensVenda;
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Select)]
+         public List<Modelo.ItensVenda> SelectIdVenda(int idVenda)
+         {
+             Modelo.ItensVenda aItensVenda;
+             List<Modelo.ItensVenda> aListItensVenda = new List<Modelo.ItensVenda>();
+             SqlConnection conn = new SqlConnection(connectionString);
+             conn.Open();
+             SqlCommand cmd = conn.CreateCommand();
+             cmd.CommandText = "select * from itensVenda where idVenda = @id";
+             cmd.Parameters.AddWithValue("@id", idVenda);
+             SqlDataReader dr = cmd.ExecuteReader();
+             if (dr.HasRows)
+             {
+                 while (dr.Read())
+                 {
+                     aItensVenda = new Modelo.ItensVenda(
+                         (int)dr["idItem"],
+                         Convert.ToDouble(dr["peso"]),
+                         Convert.ToDouble(dr["precokg"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idVenda"],
                          (int)dr["idProduto"]
                          );
@@ -91,6 +122,23 @@ namespace Sistemaloja.DAL
              // Define comando de exclusão
              SqlCommand cmd = new SqlCommand("DELETE FROM itensVenda WHERE idItem = @id", conn);
              cmd.Parameters.AddWithValue("@id", id);
+
+             // Executa Comando
+             cmd.ExecuteNonQuery();
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Delete)]
+         public void DeleteIdVenda(int idVenda)
+         {
+             // Cria Conexão com banco de dados
+             SqlConnection conn = new SqlConnection(connectionString);
+             // Abre conexão com o banco de dados
+             conn.Open();
+             // Cria comando SQL
+             SqlCommand com = conn.CreateCommand();
+             // Define comando de exclusão
+             SqlCommand cmd = new SqlCommand("DELETE FROM itensVenda WHERE idVenda = @id", conn);
+             cmd.Parameters.AddWithValue("@id", idVenda);
 
              // Executa Comando
              cmd.ExecuteNonQuery();

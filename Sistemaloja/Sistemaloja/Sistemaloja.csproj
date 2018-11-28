@@ -63,14 +63,17 @@
     <Content Include="AlterarFornecedores.aspx" />
     <Content Include="AlterarFuncionario.aspx" />
     <Content Include="AlterarItensCompra.aspx" />
+    <Content Include="AlterarItensVenda.aspx" />
     <Content Include="AlterarPagamento.aspx" />
     <Content Include="AlterarProdutos.aspx" />
+    <Content Include="AlterarVenda.aspx" />
     <Content Include="Compras.aspx" />
     <Content Include="ExcluirCompra.aspx" />
     <Content Include="ExcluirFornecedores.aspx" />
     <Content Include="ExcluirFuncionario.aspx" />
     <Content Include="ExcluirPagamento.aspx" />
     <Content Include="ExcluirProdutos.aspx" />
+    <Content Include="ExcluirVenda.aspx" />
     <Content Include="Fornecedores.aspx" />
     <Content Include="Funcionario.aspx" />
     <Content Include="Imagens\background.png" />
@@ -80,9 +83,12 @@
     <Content Include="InserirFornecedor.aspx" />
     <Content Include="InserirFuncionario.aspx" />
     <Content Include="InserirItensCompras.aspx" />
+    <Content Include="InserirItensVenda.aspx" />
     <Content Include="InserirProdutos.aspx" />
+    <Content Include="InserirVendas.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="TelaInicial.aspx" />
+    <Content Include="Vendas.aspx" />
     <Content Include="Web.config" />
     <Content Include="Cliente.aspx" />
     <Content Include="ExcluirCliente.aspx" />
@@ -120,6 +126,13 @@
     <Compile Include="AlterarItensCompra.aspx.designer.cs">
       <DependentUpon>AlterarItensCompra.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AlterarItensVenda.aspx.cs">
+      <DependentUpon>AlterarItensVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarItensVenda.aspx.designer.cs">
+      <DependentUpon>AlterarItensVenda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlterarPagamento.aspx.cs">
       <DependentUpon>AlterarPagamento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +146,13 @@
     </Compile>
     <Compile Include="AlterarProdutos.aspx.designer.cs">
       <DependentUpon>AlterarProdutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarVenda.aspx.cs">
+      <DependentUpon>AlterarVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarVenda.aspx.designer.cs">
+      <DependentUpon>AlterarVenda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Compras.aspx.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
@@ -186,6 +206,13 @@
     <Compile Include="ExcluirProdutos.aspx.designer.cs">
       <DependentUpon>ExcluirProdutos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ExcluirVenda.aspx.cs">
+      <DependentUpon>ExcluirVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirVenda.aspx.designer.cs">
+      <DependentUpon>ExcluirVenda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Fornecedores.aspx.cs">
       <DependentUpon>Fornecedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,12 +255,26 @@
     <Compile Include="InserirItensCompras.aspx.designer.cs">
       <DependentUpon>InserirItensCompras.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InserirItensVenda.aspx.cs">
+      <DependentUpon>InserirItensVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirItensVenda.aspx.designer.cs">
+      <DependentUpon>InserirItensVenda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InserirProdutos.aspx.cs">
       <DependentUpon>InserirProdutos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="InserirProdutos.aspx.designer.cs">
       <DependentUpon>InserirProdutos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserirVendas.aspx.cs">
+      <DependentUpon>InserirVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirVendas.aspx.designer.cs">
+      <DependentUpon>InserirVendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Compra.cs" />
@@ -308,6 +349,13 @@
     </Compile>
     <Compile Include="InserirPagamento.aspx.designer.cs">
       <DependentUpon>InserirPagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas.aspx.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas.aspx.designer.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

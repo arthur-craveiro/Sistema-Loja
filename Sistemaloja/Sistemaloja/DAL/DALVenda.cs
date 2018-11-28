@@ -45,8 +45,8 @@ namespace Sistemaloja.DAL
                      aVendas = new Modelo.Venda(
                          (int)dr["idVenda"],
                          (DateTime)dr["datas"],
-                         (double)dr["desconto"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idCliente"]
                          );
                      // Adiciona o livro lido à lista
@@ -89,8 +89,8 @@ namespace Sistemaloja.DAL
                      aVendas = new Modelo.Venda(
                          (int)dr["idVenda"],
                          (DateTime)dr["datas"],
-                         (double)dr["desconto"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idCliente"]
                          );
                      // Adiciona o livro lido à lista
@@ -103,6 +103,39 @@ namespace Sistemaloja.DAL
              conn.Close();
 
              return aListVendas;
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Select)]
+         public int ultId()
+         {
+             Modelo.Venda aVendas;
+             List<Modelo.Venda> aListVendas = new List<Modelo.Venda>();
+             SqlConnection conn = new SqlConnection(connectionString);
+             conn.Open();
+             SqlCommand cmd = conn.CreateCommand();
+             cmd.CommandText = "select * from Venda";
+             SqlDataReader dr = cmd.ExecuteReader();
+             int j = 0;
+             if (dr.HasRows)
+             {
+
+                 while (dr.Read())
+                 {
+                     aVendas = new Modelo.Venda(
+                         (int)dr["idVenda"],
+                         (DateTime)dr["datas"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
+                         (int)dr["idCliente"]
+                         );
+                     aListVendas.Add(aVendas);
+                     j++;
+                 }
+             }
+             dr.Close();
+             conn.Close();
+
+             return aListVendas[j - 1].idVenda;
          }
          
         [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -122,7 +155,7 @@ namespace Sistemaloja.DAL
              cmd.ExecuteNonQuery();
          }
 
-         public void InserirCompras(Modelo.Venda Venda)
+         public void InserirVendas(Modelo.Venda Venda)
          {
              // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
@@ -131,7 +164,7 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand com = conn.CreateCommand();
              // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("insert into Venda(datas, desconto, valorTotal, idCliente) values (@datas, @desconto, @idCliente)", conn);
+             SqlCommand cmd = new SqlCommand("insert into Venda(datas, desconto, valorTotal, idCliente) values (@datas, @desconto, @valorTotal, @idCliente)", conn);
              cmd.Parameters.AddWithValue("@datas", Venda.datas);
              cmd.Parameters.AddWithValue("@desconto", Venda.desconto);
              cmd.Parameters.AddWithValue("@valorTotal", Venda.valorTotal);
@@ -154,6 +187,7 @@ namespace Sistemaloja.DAL
              cmd.Parameters.AddWithValue("@desconto", Venda.desconto);
              cmd.Parameters.AddWithValue("@valorTotal", Venda.valorTotal);
              cmd.Parameters.AddWithValue("@idCliente", Venda.idCliente);
+             cmd.Parameters.AddWithValue("@id", Venda.idVenda);
              // Executa Comando
              cmd.ExecuteNonQuery();
          }
