@@ -16,8 +16,6 @@
         <tr>
             <td><asp:Button ID="Button2" runat="server" Text="Fechar" OnClick="Button2_Click" /></td>
             <td><asp:Button ID="Button3" runat="server" Text="Incluir" OnClick="Button3_Click" /></td>
-            <td><asp:Button ID="Button4" runat="server" Text="Alterar" /></td>
-            <td><asp:Button ID="Button5" runat="server" Text="Excluir" /></td>
         </tr>
     </table>
     <br />
@@ -47,8 +45,14 @@
           <asp:TableCell>Fornecedor</asp:TableCell>
           <asp:TableCell>Desconto</asp:TableCell>
           <asp:TableCell>Valor Total</asp:TableCell>
+          <asp:TableCell>Itens da Compra</asp:TableCell>
+          <asp:TableCell>Alterar</asp:TableCell>
+          <asp:TableCell>Excluir</asp:TableCell>
       </asp:TableRow>
-    </asp:Table> <br />
+    </asp:Table> 
+    <asp:Table ID="Table3" runat="server">
+    </asp:Table>
+    <br />
 
     <h2 class="titulo">&nbsp;&nbsp;Itens da Compra</h2>
     <asp:Table ID="Table2" runat="server" BackColor="#F3F3F3" Font-Bold="True" Font-Names="Segoe UI" Font-Size="18px" ForeColor="Black" GridLines="horizontal" Width="1200px">

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Sistemaloja
 {
-    public partial class InserirCompras : System.Web.UI.Page
+    public partial class AlterarCompra : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,9 +19,9 @@ namespace Sistemaloja
                 {
                     DAL.DALCompras dalcompra = new DAL.DALCompras();
                     Modelo.Compra compra = dalcompra.SelectCompras(int.Parse(Request.QueryString["idCompra"]))[0];
-                        TextBox3.Text = compra.desconto.ToString();
-                        Label6.Text = compra.valorTotal.ToString();
-                        Calendar1.SelectedDate = compra.datas;
+                    TextBox3.Text = compra.desconto.ToString();
+                    Label6.Text = compra.valorTotal.ToString();
+                    Calendar1.SelectedDate = compra.datas;
                     int idCompra = int.Parse(Request.QueryString["idCompra"].ToString());
                     listItens = dalitem.SelectIdCompra(idCompra);
                     TableRow tr1;
@@ -85,24 +85,15 @@ namespace Sistemaloja
                     }
                 }
             }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["idCompra"] == null)
-            {
-                DAL.DALCompras dalCompra = new DAL.DALCompras();
-                Modelo.Compra compra = new Modelo.Compra(Convert.ToDateTime(Calendar1.SelectedDate), double.Parse(TextBox3.Text), double.Parse(Label6.Text), int.Parse(DropDownList1.SelectedValue));
-                dalCompra.InserirCompras(compra);
-                int j = dalCompra.ultId();
-                Response.Redirect("./InserirCompras.aspx?idCompra=" + dalCompra.ultId());
-            }
-            else {
-                DAL.DALCompras dalCompra = new DAL.DALCompras();
-                Modelo.Compra compra = new Modelo.Compra(int.Parse(Request.QueryString["idCompra"]), Convert.ToDateTime(Calendar1.SelectedDate), double.Parse(TextBox3.Text), double.Parse(Label6.Text), int.Parse(DropDownList1.SelectedValue));
-                dalCompra.AtualizarCompras(compra);
-                Response.Redirect("./Compras.aspx");
-            }
+            DAL.DALCompras dalCompra = new DAL.DALCompras();
+            Modelo.Compra compra = new Modelo.Compra(int.Parse(Request.QueryString["idCompra"]), Convert.ToDateTime(Calendar1.SelectedDate), double.Parse(TextBox3.Text), double.Parse(Label6.Text), int.Parse(DropDownList1.SelectedValue));
+            dalCompra.AtualizarCompras(compra);
+            Response.Redirect("./Compras.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -112,15 +103,8 @@ namespace Sistemaloja
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            if (Request.QueryString["idCompra"] != null)
-            {
-                int idCompra = int.Parse(Request.QueryString["idCompra"].ToString());
-                Response.Redirect("./InserirItensCompras.aspx?idCompra=" + idCompra);
-            }
-            else 
-            {
-                Label5.Text = "Por favor, envie a compra antes de incluir itens nela.";
-            }
+            int idCompra = int.Parse(Request.QueryString["idCompra"].ToString());
+            Response.Redirect("./InserirItensCompras.aspx?idCompra=" + idCompra);
         }
 
         protected void Button4_Click(object sender, EventArgs e)

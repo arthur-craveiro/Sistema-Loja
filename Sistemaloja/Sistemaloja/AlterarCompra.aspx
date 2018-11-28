@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SistemaMaster.Master" AutoEventWireup="true" CodeBehind="InserirCompras.aspx.cs" Inherits="Sistemaloja.InserirCompras" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SistemaMaster.Master" AutoEventWireup="true" CodeBehind="AlterarCompra.aspx.cs" Inherits="Sistemaloja.AlterarCompra" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -12,7 +13,7 @@
             margin-left:20px;
         }
     </style>
-    <h1 class="titulo">Inserir Compra</h1><br />
+    <h1 class="titulo">Alterar Compra</h1><br />
 
     <h2 class="titulo">&nbsp;&nbsp;Itens da Compra&nbsp;&nbsp;<asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Incluir" Height="30px" Width="98px" />&nbsp;&nbsp;
   <asp:Button ID="Button4" runat="server" Text="Excluir" Height="30px" OnClick="Button4_Click" Width="98px" />
@@ -32,7 +33,7 @@
     <br/>
     
     <table>
-        <caption>Cadastro de nova compra</caption>
+        <caption>Atualização da compra</caption>
     <tr><td><asp:Label ID="Label1" runat="server" Text="Data:" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Black"></asp:Label></td>
         <td><asp:Calendar ID="Calendar1" runat="server"></asp:Calendar></td>
     </tr>

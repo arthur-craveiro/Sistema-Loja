@@ -21,6 +21,10 @@ namespace Sistemaloja
             int idCompra = int.Parse(Request.QueryString["idCompra"].ToString());
             Modelo.ItensCompra itemCompra = new Modelo.ItensCompra(TextBox1.Text, int.Parse(TextBox2.Text), double.Parse(TextBox3.Text), precoTotal, idCompra,int.Parse(DropDownList1.SelectedValue));
             dalitem.InserirItensCompra(itemCompra);
+            DAL.DALCompras dalcompra = new DAL.DALCompras();
+            Modelo.Compra compra = dalcompra.SelectCompras(idCompra)[0];
+            compra.valorTotal = compra.valorTotal + precoTotal;
+            dalcompra.AtualizarCompras(compra);
             Response.Redirect("./InserirCompras.aspx?idCompra=" + idCompra);
         }
 

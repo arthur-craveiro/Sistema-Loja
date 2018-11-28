@@ -123,7 +123,7 @@ namespace Sistemaloja.DAL
              dr.Close();
              conn.Close();
 
-             return j;
+             return aListCompras[j-1].idCompra;
          }
 
          [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -175,6 +175,7 @@ namespace Sistemaloja.DAL
              cmd.Parameters.AddWithValue("@desconto", Compra.desconto);
              cmd.Parameters.AddWithValue("@valorTotal", Compra.valorTotal);
              cmd.Parameters.AddWithValue("@idFornecedores", Compra.idFornecedores);
+             cmd.Parameters.AddWithValue("@id", Compra.idCompra);
              // Executa Comando
              cmd.ExecuteNonQuery();
          }

@@ -59,11 +59,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlterarCompra.aspx" />
     <Content Include="AlterarFornecedores.aspx" />
     <Content Include="AlterarFuncionario.aspx" />
+    <Content Include="AlterarItensCompra.aspx" />
     <Content Include="AlterarPagamento.aspx" />
     <Content Include="AlterarProdutos.aspx" />
     <Content Include="Compras.aspx" />
+    <Content Include="ExcluirCompra.aspx" />
     <Content Include="ExcluirFornecedores.aspx" />
     <Content Include="ExcluirFuncionario.aspx" />
     <Content Include="ExcluirPagamento.aspx" />
@@ -89,6 +92,13 @@
     <Content Include="InserirPagamento.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlterarCompra.aspx.cs">
+      <DependentUpon>AlterarCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarCompra.aspx.designer.cs">
+      <DependentUpon>AlterarCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlterarFornecedores.aspx.cs">
       <DependentUpon>AlterarFornecedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,6 +112,13 @@
     </Compile>
     <Compile Include="AlterarFuncionario.aspx.designer.cs">
       <DependentUpon>AlterarFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlterarItensCompra.aspx.cs">
+      <DependentUpon>AlterarItensCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlterarItensCompra.aspx.designer.cs">
+      <DependentUpon>AlterarItensCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="AlterarPagamento.aspx.cs">
       <DependentUpon>AlterarPagamento.aspx</DependentUpon>
@@ -134,6 +151,13 @@
     <Compile Include="DAL\DALProdutos.cs" />
     <Compile Include="DAL\DALUF.cs" />
     <Compile Include="DAL\DALVenda.cs" />
+    <Compile Include="ExcluirCompra.aspx.cs">
+      <DependentUpon>ExcluirCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExcluirCompra.aspx.designer.cs">
+      <DependentUpon>ExcluirCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ExcluirFornecedores.aspx.cs">
       <DependentUpon>ExcluirFornecedores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

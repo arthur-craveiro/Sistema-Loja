@@ -10,7 +10,7 @@
 namespace Sistemaloja {
     
     
-    public partial class InserirCompras {
+    public partial class AlterarCompra {
         
         /// <summary>
         /// Controle Button3.
