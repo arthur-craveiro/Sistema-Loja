@@ -73,8 +73,10 @@
     <Content Include="Imagens\background.png" />
     <Content Include="Imagens\p.png" />
     <Content Include="Imagens\s.png" />
+    <Content Include="InserirCompras.aspx" />
     <Content Include="InserirFornecedor.aspx" />
     <Content Include="InserirFuncionario.aspx" />
+    <Content Include="InserirItensCompras.aspx" />
     <Content Include="InserirProdutos.aspx" />
     <Content Include="Produtos.aspx" />
     <Content Include="TelaInicial.aspx" />
@@ -174,6 +176,13 @@
     <Compile Include="Funcionario.aspx.designer.cs">
       <DependentUpon>Funcionario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="InserirCompras.aspx.cs">
+      <DependentUpon>InserirCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirCompras.aspx.designer.cs">
+      <DependentUpon>InserirCompras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="InserirFornecedor.aspx.cs">
       <DependentUpon>InserirFornecedor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,6 +196,13 @@
     </Compile>
     <Compile Include="InserirFuncionario.aspx.designer.cs">
       <DependentUpon>InserirFuncionario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InserirItensCompras.aspx.cs">
+      <DependentUpon>InserirItensCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InserirItensCompras.aspx.designer.cs">
+      <DependentUpon>InserirItensCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="InserirProdutos.aspx.cs">
       <DependentUpon>InserirProdutos.aspx</DependentUpon>

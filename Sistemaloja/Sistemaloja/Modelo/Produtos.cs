@@ -22,8 +22,5 @@ namespace Sistemaloja.Modelo
             this.codigo = acodigo;
             this.descricao = adescricao;
         }
-   
-
-    }
-   
+    } 
 }

@@ -45,8 +45,8 @@ namespace Sistemaloja.DAL
                      aCompras = new Modelo.Compra(
                          (int)dr["idCompra"],
                          (DateTime)dr["datas"],
-                         (double)dr["desconto"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idFornecedores"]
                          );
                      // Adiciona o livro lido à lista
@@ -64,45 +64,66 @@ namespace Sistemaloja.DAL
          [DataObjectMethod(DataObjectMethodType.Select)]
          public List<Modelo.Compra> SelectCompras(int id)
          {
-             // Variavel para armazenar um livro
              Modelo.Compra aCompras;
-             // Cria Lista Vazia
              List<Modelo.Compra> aListCompras = new List<Modelo.Compra>();
-             // Cria Conexão com banco de dados
              SqlConnection conn = new SqlConnection(connectionString);
-             // Abre conexão com o banco de dados
              conn.Open();
-             // Cria comando SQL
              SqlCommand cmd = conn.CreateCommand();
-             // define SQL do comando
              cmd.CommandText = "select * from Compra where idCompra = @id";
              cmd.Parameters.AddWithValue("@id", id);
-             // Executa comando, gerando objeto DbDataReader
              SqlDataReader dr = cmd.ExecuteReader();
-             // Le titulo do livro do resultado e apresenta no segundo rótulo
              if (dr.HasRows)
              {
 
-                 while (dr.Read()) // Le o proximo registro
+                 while (dr.Read())
                  {
-                     // Cria objeto com dados lidos do banco de dados
                      aCompras = new Modelo.Compra(
                          (int)dr["idCompra"],
                          (DateTime)dr["datas"],
-                         (double)dr["desconto"],
-                         (double)dr["valorTotal"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
                          (int)dr["idFornecedores"]
                          );
-                     // Adiciona o livro lido à lista
                      aListCompras.Add(aCompras);
                  }
              }
-             // Fecha DataReader
              dr.Close();
-             // Fecha Conexão
              conn.Close();
 
              return aListCompras;
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Select)]
+         public int ultId()
+         {
+             Modelo.Compra aCompras;
+             List<Modelo.Compra> aListCompras = new List<Modelo.Compra>();
+             SqlConnection conn = new SqlConnection(connectionString);
+             conn.Open();
+             SqlCommand cmd = conn.CreateCommand();
+             cmd.CommandText = "select * from Compra";
+             SqlDataReader dr = cmd.ExecuteReader();
+             int j = 0;
+             if (dr.HasRows)
+             {
+
+                 while (dr.Read())
+                 {
+                     aCompras = new Modelo.Compra(
+                         (int)dr["idCompra"],
+                         (DateTime)dr["datas"],
+                         Convert.ToDouble(dr["desconto"]),
+                         Convert.ToDouble(dr["valorTotal"]),
+                         (int)dr["idFornecedores"]
+                         );
+                     aListCompras.Add(aCompras);
+                     j++;
+                 }
+             }
+             dr.Close();
+             conn.Close();
+
+             return j;
          }
 
          [DataObjectMethod(DataObjectMethodType.Delete)]
@@ -131,7 +152,7 @@ namespace Sistemaloja.DAL
              // Cria comando SQL
              SqlCommand com = conn.CreateCommand();
              // Define comando de exclusão
-             SqlCommand cmd = new SqlCommand("insert into Compra(datas, desconto, valorTotal, idFornecedores) values (@datas, @desconto, @idFornecedores)", conn);
+             SqlCommand cmd = new SqlCommand("insert into Compra(datas, desconto, valorTotal, idFornecedores) values (@datas, @desconto, @valorTotal, @idFornecedores)", conn);
              cmd.Parameters.AddWithValue("@datas", Compra.datas);
              cmd.Parameters.AddWithValue("@desconto", Compra.desconto);
              cmd.Parameters.AddWithValue("@valorTotal", Compra.valorTotal);

@@ -36,8 +36,8 @@ namespace Sistemaloja.DAL
                          (int)dr["idItem"],
                          (string)dr["unidade"],
                          (int)dr["quantidade"],
-                         (double)dr["precoUnitario"],
-                         (double)dr["precoTotal"],
+                         Convert.ToDouble(dr["precoUnitario"]),
+                         Convert.ToDouble(dr["precoTotal"]),
                          (int)dr["idCompra"],
                          (int)dr["idProduto"]
                          );
@@ -68,8 +68,40 @@ namespace Sistemaloja.DAL
                          (int)dr["idItem"],
                          (string)dr["unidade"],
                          (int)dr["quantidade"],
-                         (double)dr["precoUnitario"],
-                         (double)dr["precoTotal"],
+                         Convert.ToDouble(dr["precoUnitario"]),
+                         Convert.ToDouble(dr["precoTotal"]),
+                         (int)dr["idCompra"],
+                         (int)dr["idProduto"]
+                         );
+                     aListItensCompra.Add(aItensCompra);
+                 }
+             }
+             dr.Close();
+             conn.Close();
+             return aListItensCompra;
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Select)]
+         public List<Modelo.ItensCompra> SelectIdCompra(int idCompra)
+         {
+             Modelo.ItensCompra aItensCompra;
+             List<Modelo.ItensCompra> aListItensCompra = new List<Modelo.ItensCompra>();
+             SqlConnection conn = new SqlConnection(connectionString);
+             conn.Open();
+             SqlCommand cmd = conn.CreateCommand();
+             cmd.CommandText = "select * from itensCompra where idCompra = @id";
+             cmd.Parameters.AddWithValue("@id", idCompra);
+             SqlDataReader dr = cmd.ExecuteReader();
+             if (dr.HasRows)
+             {
+                 while (dr.Read())
+                 {
+                     aItensCompra = new Modelo.ItensCompra(
+                         (int)dr["idItem"],
+                         (string)dr["unidade"],
+                         (int)dr["quantidade"],
+                         Convert.ToDouble(dr["precoUnitario"]),
+                         Convert.ToDouble(dr["precoTotal"]),
                          (int)dr["idCompra"],
                          (int)dr["idProduto"]
                          );
@@ -93,6 +125,23 @@ namespace Sistemaloja.DAL
              // Define comando de exclusão
              SqlCommand cmd = new SqlCommand("DELETE FROM itensCompra WHERE idItem = @id", conn);
              cmd.Parameters.AddWithValue("@id", id);
+
+             // Executa Comando
+             cmd.ExecuteNonQuery();
+         }
+
+         [DataObjectMethod(DataObjectMethodType.Delete)]
+         public void DeleteIdCompra(int idCompra)
+         {
+             // Cria Conexão com banco de dados
+             SqlConnection conn = new SqlConnection(connectionString);
+             // Abre conexão com o banco de dados
+             conn.Open();
+             // Cria comando SQL
+             SqlCommand com = conn.CreateCommand();
+             // Define comando de exclusão
+             SqlCommand cmd = new SqlCommand("DELETE FROM itensCompra WHERE idCompra = @id", conn);
+             cmd.Parameters.AddWithValue("@id", idCompra);
 
              // Executa Comando
              cmd.ExecuteNonQuery();

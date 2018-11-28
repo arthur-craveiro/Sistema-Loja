@@ -404,7 +404,7 @@ box-shadow: 2px 2px 5px 2px rgba(0,0,0,.5);
 <nav class="menu" id="cadastros">
 	<ul>
 	<li><a href="javascript:window.history.go(-1)">Voltar</a></li>
-	<li><asp:HyperLink ID="HyperLink2" runat="server" ForeColor="white" NavigateUrl="">Compras</asp:HyperLink></li>
+	<li><asp:HyperLink ID="HyperLink2" runat="server" ForeColor="white" NavigateUrl="~/Compras.aspx">Compras</asp:HyperLink></li>
 	<li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Cliente.aspx" ForeColor="White">Clientes</asp:HyperLink></li>
 	<li><asp:HyperLink ID="HyperLink4" runat="server" ForeColor="white" NavigateUrl="~/Fornecedores.aspx">Fornecedores</asp:HyperLink></li>
     <li><asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/Funcionario.aspx" ForeColor="White">Funcionários</asp:HyperLink></li>

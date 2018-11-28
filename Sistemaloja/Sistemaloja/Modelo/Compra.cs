@@ -14,8 +14,8 @@ namespace Sistemaloja.Modelo
         public Fornecedores Fornecedor { get; set; }
         public int idFornecedores
         {
-            get { return Fornecedor.idFornecedores; }
-            set { Fornecedor.idFornecedores = value; }
+                get { return Fornecedor.idFornecedores; }
+                set { Fornecedor.idFornecedores = value; }
         }
         public Compra(int idCompra, DateTime datas, double desconto, double valorTotal, int aidFornecedores)
         {
